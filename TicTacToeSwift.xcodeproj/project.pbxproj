@@ -16,6 +16,9 @@
 		B52C6DAD19EC802E00F8D7E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C6DAC19EC802E00F8D7E2 /* AppDelegate.swift */; };
 		B52C6DB019EC802E00F8D7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52C6DAE19EC802E00F8D7E2 /* Main.storyboard */; };
 		B52C6DB219EC802E00F8D7E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52C6DB119EC802E00F8D7E2 /* Images.xcassets */; };
+		B559559B19EDBC6600275421 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559559A19EDBC6600275421 /* Board.swift */; };
+		B559559C19EDBC6600275421 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559559A19EDBC6600275421 /* Board.swift */; };
+		B559559E19EDBC7800275421 /* BoardSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559559D19EDBC7800275421 /* BoardSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,8 @@
 		B52C6DAC19EC802E00F8D7E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Support/AppDelegate.swift; sourceTree = "<group>"; };
 		B52C6DAF19EC802E00F8D7E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B52C6DB119EC802E00F8D7E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B559559A19EDBC6600275421 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		B559559D19EDBC7800275421 /* BoardSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +119,7 @@
 				B52C6D7F19EC7FDB00F8D7E2 /* Images.xcassets */,
 				B52C6D8119EC7FDB00F8D7E2 /* LaunchScreen.xib */,
 				B52C6D7619EC7FDB00F8D7E2 /* Supporting Files */,
+				B559559A19EDBC6600275421 /* Board.swift */,
 			);
 			path = TicTacToeSwift;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 				B52C6DB119EC802E00F8D7E2 /* Images.xcassets */,
 				B52C6DA919EC802E00F8D7E2 /* Support */,
 				B52C6DA719EC802E00F8D7E2 /* Supporting Files */,
+				B559559D19EDBC7800275421 /* BoardSpec.swift */,
 			);
 			path = TicTacToeSwiftSpecs;
 			sourceTree = "<group>";
@@ -318,6 +325,7 @@
 			files = (
 				B52C6D7B19EC7FDB00F8D7E2 /* ViewController.swift in Sources */,
 				B52C6D7919EC7FDB00F8D7E2 /* AppDelegate.swift in Sources */,
+				B559559B19EDBC6600275421 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +341,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52C6DAD19EC802E00F8D7E2 /* AppDelegate.swift in Sources */,
+				B559559E19EDBC7800275421 /* BoardSpec.swift in Sources */,
 				B52C6DAB19EC802E00F8D7E2 /* SwiftestController.swift in Sources */,
+				B559559C19EDBC6600275421 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
