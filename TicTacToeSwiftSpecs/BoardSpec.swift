@@ -16,7 +16,7 @@ class BoardSpec: SwiftestSuite {
         
         it("initializes with 9 spaces by default") {
             let board = Board()
-            expect(board.spaces.count).to(.Equal(9))
+            expect(board.getSpaces().count).to(.Equal(9))
         }
     }
 }
