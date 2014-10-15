@@ -8,15 +8,61 @@ class BoardSpec: SwiftestSuite {
             board.place(token: "X", space: 0)
             expect(board.space(0)).to(.Equal("X"))
         }
-        
-        it("initializes its spaces to empty strings") {
+
+        it("initializes its spaces to literal spaces") {
             let board = Board()
-            expect(board.space(0)).to(.Equal(""))
+            expect(board.space(0)).to(.Equal(" "))
         }
-        
-        it("initializes with 9 spaces by default") {
+
+        it("provides its spaces") {
             let board = Board()
-            expect(board.getSpaces().count).to(.Equal(9))
+            expect(board.getSpaces()).to(.Equal([" ", " ", " ",
+                                                 " ", " ", " ",
+                                                 " ", " ", " "]))
+        }
+
+        it("provides its full row lines") {
+            let board = TestBoard().generate(["X", "O", "X",
+                                              " ", " ", " ",
+                                              "O", "X", "O"])
+            expect(board.getFullLines()!).to(.Equal([["X", "O", "X"],
+                                                     ["O", "X", "O"]]))
+        }
+
+        it("provides its full column lines") {
+            let board = TestBoard().generate(["O", " ", "X",
+                                              "X", " ", "O",
+                                              "O", " ", "X"])
+            expect(board.getFullLines()!).to(.Equal([["O", "X", "O"],
+                                                     ["X", "O", "X"]]))
+        }
+
+        it("provides its full diagonal lines") {
+            let board = TestBoard().generate([" ", " ", "X",
+                                              " ", "X", " ",
+                                              "X", " ", " "])
+            expect(board.getFullLines()!).to(.Equal([["X", "X", "X"]]))
+        }
+
+        it("returns an empty array when it has no full lines") {
+            let board = TestBoard().generate([" ", "O", " ",
+                                              " ", " ", "X",
+                                              "X", " ", " "])
+            expect(board.getFullLines()!).to(.Equal([]))
+        }
+
+        it("returns false when it is not full") {
+            let board = TestBoard().generate(["X", "X", "O",
+                                              "O", " ", "X",
+                                              "X", "O", "X"])
+            expect(board.isFull()).to(.Equal(false))
+        }
+
+        it("returns true when it is full") {
+            let board = TestBoard().generate(["X", "X", "O",
+                                              "O", "O", "X",
+                                              "X", "O", "X"])
+            expect(board.isFull()).to(.Equal(true))
         }
     }
 }

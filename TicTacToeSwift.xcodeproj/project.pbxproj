@@ -22,6 +22,10 @@
 		B55955A019EDC9E400275421 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559559F19EDC9E400275421 /* Game.swift */; };
 		B55955A119EDC9E400275421 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559559F19EDC9E400275421 /* Game.swift */; };
 		B55955A319EDC9F400275421 /* GameSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A219EDC9F400275421 /* GameSpec.swift */; };
+		B55955A519EDD46B00275421 /* VictoryConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A419EDD46B00275421 /* VictoryConditions.swift */; };
+		B55955A619EDD46B00275421 /* VictoryConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A419EDD46B00275421 /* VictoryConditions.swift */; };
+		B55955A819EDD47D00275421 /* VictoryConditionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */; };
+		B55955AA19EDF64B00275421 /* TestBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A919EDF64B00275421 /* TestBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,9 @@
 		B559559D19EDBC7800275421 /* BoardSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardSpec.swift; sourceTree = "<group>"; };
 		B559559F19EDC9E400275421 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B55955A219EDC9F400275421 /* GameSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSpec.swift; sourceTree = "<group>"; };
+		B55955A419EDD46B00275421 /* VictoryConditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoryConditions.swift; sourceTree = "<group>"; };
+		B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoryConditionsSpec.swift; sourceTree = "<group>"; };
+		B55955A919EDF64B00275421 /* TestBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +133,7 @@
 				B52C6D7619EC7FDB00F8D7E2 /* Supporting Files */,
 				B559559A19EDBC6600275421 /* Board.swift */,
 				B559559F19EDC9E400275421 /* Game.swift */,
+				B55955A419EDD46B00275421 /* VictoryConditions.swift */,
 			);
 			path = TicTacToeSwift;
 			sourceTree = "<group>";
@@ -155,6 +163,8 @@
 				B52C6DA719EC802E00F8D7E2 /* Supporting Files */,
 				B559559D19EDBC7800275421 /* BoardSpec.swift */,
 				B55955A219EDC9F400275421 /* GameSpec.swift */,
+				B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */,
+				B55955A919EDF64B00275421 /* TestBoard.swift */,
 			);
 			path = TicTacToeSwiftSpecs;
 			sourceTree = "<group>";
@@ -334,6 +344,7 @@
 				B52C6D7919EC7FDB00F8D7E2 /* AppDelegate.swift in Sources */,
 				B559559B19EDBC6600275421 /* Board.swift in Sources */,
 				B55955A019EDC9E400275421 /* Game.swift in Sources */,
+				B55955A519EDD46B00275421 /* VictoryConditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +361,10 @@
 			files = (
 				B55955A319EDC9F400275421 /* GameSpec.swift in Sources */,
 				B52C6DAD19EC802E00F8D7E2 /* AppDelegate.swift in Sources */,
+				B55955AA19EDF64B00275421 /* TestBoard.swift in Sources */,
 				B55955A119EDC9E400275421 /* Game.swift in Sources */,
+				B55955A819EDD47D00275421 /* VictoryConditionsSpec.swift in Sources */,
+				B55955A619EDD46B00275421 /* VictoryConditions.swift in Sources */,
 				B559559E19EDBC7800275421 /* BoardSpec.swift in Sources */,
 				B52C6DAB19EC802E00F8D7E2 /* SwiftestController.swift in Sources */,
 				B559559C19EDBC6600275421 /* Board.swift in Sources */,
