@@ -22,7 +22,7 @@ class Board {
         return spaces
     }
 
-    func getFullLines() -> ([[String]])? {
+    func fullLines() -> ([[String]])? {
         return lines().filter({ self.isFullLine($0) })
     }
 

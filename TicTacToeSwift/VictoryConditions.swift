@@ -9,7 +9,7 @@ class VictoryConditions {
     }
 
     func winningToken(#board: Board) -> String? {
-        for line in board.getFullLines()! {
+        for line in board.fullLines()! {
             if filledWithSameToken(line) {
                 return line[0]
             }

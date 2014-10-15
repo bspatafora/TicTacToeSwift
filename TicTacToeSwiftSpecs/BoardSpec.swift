@@ -25,7 +25,7 @@ class BoardSpec: SwiftestSuite {
             let board = TestBoard().generate(["X", "O", "X",
                                               " ", " ", " ",
                                               "O", "X", "O"])
-            expect(board.getFullLines()!).to(.Equal([["X", "O", "X"],
+            expect(board.fullLines()!).to(.Equal([["X", "O", "X"],
                                                      ["O", "X", "O"]]))
         }
 
@@ -33,7 +33,7 @@ class BoardSpec: SwiftestSuite {
             let board = TestBoard().generate(["O", " ", "X",
                                               "X", " ", "O",
                                               "O", " ", "X"])
-            expect(board.getFullLines()!).to(.Equal([["O", "X", "O"],
+            expect(board.fullLines()!).to(.Equal([["O", "X", "O"],
                                                      ["X", "O", "X"]]))
         }
 
@@ -41,14 +41,14 @@ class BoardSpec: SwiftestSuite {
             let board = TestBoard().generate([" ", " ", "X",
                                               " ", "X", " ",
                                               "X", " ", " "])
-            expect(board.getFullLines()!).to(.Equal([["X", "X", "X"]]))
+            expect(board.fullLines()!).to(.Equal([["X", "X", "X"]]))
         }
 
         it("returns an empty array when it has no full lines") {
             let board = TestBoard().generate([" ", "O", " ",
                                               " ", " ", "X",
                                               "X", " ", " "])
-            expect(board.getFullLines()!).to(.Equal([]))
+            expect(board.fullLines()!).to(.Equal([]))
         }
 
         it("returns false when it is not full") {
