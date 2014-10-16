@@ -6,6 +6,7 @@ class VictoryConditionsSpec: SwiftestSuite {
         it("returns false if there is no winning token and no draw") {
             let board = Board()
             expect(VictoryConditions().isGameOver(board: board)).to(.Equal(false))
+            expect(VictoryConditions().isDraw(board: board)).to(.Equal(false))
         }
 
         it("returns true if there is a winning token") {
@@ -20,6 +21,7 @@ class VictoryConditionsSpec: SwiftestSuite {
                                               "O", "O", "X",
                                               "X", "O", "X"])
             expect(VictoryConditions().isGameOver(board: board)).to(.Equal(true))
+            expect(VictoryConditions().isDraw(board: board)).to(.Equal(true))
         }
 
         it("returns nil if there is no winning token") {

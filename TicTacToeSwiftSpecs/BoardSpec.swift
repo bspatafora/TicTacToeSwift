@@ -26,7 +26,7 @@ class BoardSpec: SwiftestSuite {
                                               " ", " ", " ",
                                               "O", "X", "O"])
             expect(board.fullLines()!).to(.Equal([["X", "O", "X"],
-                                                     ["O", "X", "O"]]))
+                                                  ["O", "X", "O"]]))
         }
 
         it("provides its full column lines") {
@@ -34,7 +34,7 @@ class BoardSpec: SwiftestSuite {
                                               "X", " ", "O",
                                               "O", " ", "X"])
             expect(board.fullLines()!).to(.Equal([["O", "X", "O"],
-                                                     ["X", "O", "X"]]))
+                                                  ["X", "O", "X"]]))
         }
 
         it("provides its full diagonal lines") {

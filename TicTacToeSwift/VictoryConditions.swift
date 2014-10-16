@@ -2,7 +2,7 @@ import Foundation
 
 class VictoryConditions {
     func isGameOver(#board: Board) -> Bool {
-        if isWinner(board) || isDraw(board) {
+        if isWinner(board) || isDraw(board: board) {
             return true
         }
         return false
@@ -17,12 +17,12 @@ class VictoryConditions {
         return nil
     }
 
-    private func isWinner(board: Board) -> Bool {
-        return winningToken(board: board) != nil
+    func isDraw(#board: Board) -> Bool {
+        return board.isFull()
     }
 
-    private func isDraw(board: Board) -> Bool {
-        return board.isFull()
+    private func isWinner(board: Board) -> Bool {
+        return winningToken(board: board) != nil
     }
 
     private func filledWithSameToken(line: [String]) -> Bool {

@@ -24,4 +24,20 @@ class Game {
     func move(space: Int) {
         board.place(token: currentToken, space: space)
     }
+
+    func spaces() -> [String] {
+        return board.getSpaces()
+    }
+
+    func isOver() -> Bool {
+        return VictoryConditions().isGameOver(board: board)
+    }
+
+    func wasDraw() -> Bool {
+        return VictoryConditions().isDraw(board: board)
+    }
+
+    func winningToken() -> String? {
+        return VictoryConditions().winningToken(board: board)
+    }
 }
