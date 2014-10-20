@@ -14,5 +14,4 @@ The game Tic-tac-toe in Swift, for iOS.
 ## Running the tests
   1. Open the project in Xcode
   2. Select the `TicTacToeSwiftSpecs` target
-  3. Select the iPhone 6 simulator
-  4. Hit Run
+  3. Hit Run
