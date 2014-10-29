@@ -9,7 +9,7 @@ class UIPort {
         self.adapter = adapter
     }
 
-    func moveWasMade(#move: Int) {
+    func makeMove(#move: Int) {
         game.move(move)
         game.switchTokens()
         if game.isOver() {

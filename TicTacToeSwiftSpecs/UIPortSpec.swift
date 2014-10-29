@@ -11,7 +11,7 @@ class UIPortSpec: SwiftestSuite {
             let adapter = MockUIAdapter()
             let port = UIPort(game: game, adapter: adapter)
 
-            port.moveWasMade(move: 0)
+            port.makeMove(move: 0)
             expect(adapter.receivedUpdatedSpaces!).to(.Equal(board.getSpaces()))
         }
 
@@ -25,7 +25,7 @@ class UIPortSpec: SwiftestSuite {
             let adapter = MockUIAdapter()
             let port = UIPort(game: game, adapter: adapter)
 
-            port.moveWasMade(move: 8)
+            port.makeMove(move: 8)
             expect(adapter.drawMessageReceived).to(.Be(true))
             expect(adapter.receivedUpdatedSpaces!).to(.Equal(board.getSpaces()))
         }
@@ -40,7 +40,7 @@ class UIPortSpec: SwiftestSuite {
             let adapter = MockUIAdapter()
             let port = UIPort(game: game, adapter: adapter)
             
-            port.moveWasMade(move: 2)
+            port.makeMove(move: 2)
             expect(adapter.receivedWinningToken).to(.Equal("X"))
             expect(adapter.receivedUpdatedSpaces!).to(.Equal(board.getSpaces()))
         }

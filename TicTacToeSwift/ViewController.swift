@@ -26,7 +26,7 @@ class ViewController: UIViewController, UIAdapterProtocol {
 
     @IBAction func buttonTouch(sender: UIButton) {
         disableButton(sender)
-        port.moveWasMade(move: sender.tag)
+        port.makeMove(move: sender.tag)
     }
 
     func boardWasUpdated(#spaces: [String]) {
