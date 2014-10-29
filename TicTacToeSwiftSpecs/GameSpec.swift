@@ -3,44 +3,58 @@ import Swiftest
 
 class GameSpec: SwiftestSuite {
     let spec = describe("Game") {
-        it("knows the current token") {
+        it("knows the current player") {
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: Board(),
-                            firstToken: "X",
-                            secondToken: "O")
-            expect(game.getCurrentToken()).to(.Equal("X"))
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+            
+            expect(game.getCurrentPlayer() == firstPlayer).to(.Be(true))
         }
 
-        it("updates the current token") {
+        it("updates the current player") {
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: Board(),
-                            firstToken: "X",
-                            secondToken: "O")
-            game.switchTokens()
-            expect(game.getCurrentToken()).to(.Equal("O"))
-            game.switchTokens()
-            expect(game.getCurrentToken()).to(.Equal("X"))
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
+            expect(game.getCurrentPlayer() == firstPlayer).to(.Be(true))
+            game.switchPlayers()
+            expect(game.getCurrentPlayer() == firstPlayer).to(.Be(false))
         }
 
-        it("makes moves for the current token") {
+        it("makes moves for the current player") {
             let board = Board()
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: board,
-                            firstToken: "X",
-                            secondToken: "O")
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
             game.move(4)
             expect(board.space(4)).to(.Equal("X"))
         }
 
         it("returns its board’s spaces") {
             let board = Board()
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: board,
-                            firstToken: "X",
-                            secondToken: "O")
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
             expect(game.spaces()).to(.Equal(board.getSpaces()))
         }
 
         it("returns false if there is no winning token and no draw") {
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: Board(),
-                            firstToken: "X",
-                            secondToken: "O")
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
             expect(game.isOver()).to(.Equal(false))
             expect(game.wasDraw()).to(.Equal(false))
         }
@@ -49,9 +63,12 @@ class GameSpec: SwiftestSuite {
             let board = TestBoard().generate(["X", " ", " ",
                                               " ", "X", " ",
                                               " ", " ", "X"])
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: board,
-                            firstToken: "X",
-                            secondToken: "O")
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
             expect(game.isOver()).to(.Equal(true))
         }
         
@@ -59,9 +76,12 @@ class GameSpec: SwiftestSuite {
             let board = TestBoard().generate(["X", "X", "O",
                                               "O", "O", "X",
                                               "X", "O", "X"])
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: board,
-                            firstToken: "X",
-                            secondToken: "O")
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
             expect(game.isOver()).to(.Equal(true))
             expect(game.wasDraw()).to(.Equal(true))
         }
@@ -70,9 +90,12 @@ class GameSpec: SwiftestSuite {
             let board = TestBoard().generate(["X", " ", "X",
                                               "O", "O", " ",
                                               " ", " ", "X"])
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: board,
-                            firstToken: "X",
-                            secondToken: "O")
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
             expect(game.winningToken()).to(.Equal(nil))
         }
 
@@ -80,9 +103,12 @@ class GameSpec: SwiftestSuite {
             let board = TestBoard().generate(["X", "X", "X",
                                               " ", " ", " ",
                                               " ", " ", " "])
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: board,
-                            firstToken: "X",
-                            secondToken: "O")
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
             expect(game.winningToken()).to(.Equal("X"))
         }
 
@@ -90,9 +116,12 @@ class GameSpec: SwiftestSuite {
             let board = TestBoard().generate(["X", "O", "X",
                                               " ", "O", " ",
                                               " ", "O", " "])
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: board,
-                            firstToken: "X",
-                            secondToken: "O")
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
             expect(game.winningToken()).to(.Equal("O"))
         }
 
@@ -100,9 +129,12 @@ class GameSpec: SwiftestSuite {
             let board = TestBoard().generate(["X", "O", " ",
                                               " ", "X", " ",
                                               " ", "O", "X"])
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
             let game = Game(board: board,
-                            firstToken: "X",
-                            secondToken: "O")
+                            firstPlayer: firstPlayer,
+                            secondPlayer: secondPlayer)
+
             expect(game.winningToken()).to(.Equal("X"))
         }
     }

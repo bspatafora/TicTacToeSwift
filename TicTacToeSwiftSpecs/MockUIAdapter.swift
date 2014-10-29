@@ -1,25 +1,27 @@
 import Foundation
 
 class MockUIAdapter: UIAdapterProtocol {
-    var receivedUpdatedSpaces: [String]?
-    var drawMessageReceived = false
-    var receivedWinningToken: String?
+    var receivedBoardWasUpdated = false
+    var receivedGameEndedInDraw = false
     var receivedGameEndedInWinner = false
-
-    init() { } // Required to prevent erroneous compiler error
+    var receivedGetMove = false
+    
+    init() { } // Erroneous Swift compiler error when not present
+    
+    func getMove() -> Int {
+        receivedGetMove = true
+        return -1
+    }
     
     func boardWasUpdated(#spaces: [String]) {
-        receivedUpdatedSpaces = spaces
+        receivedBoardWasUpdated = true
     }
     
     func gameEndedInDraw(#spaces: [String]) {
-        drawMessageReceived = true
-        receivedUpdatedSpaces = spaces
+        receivedGameEndedInDraw = true
     }
     
     func gameEndedInWinner(#spaces: [String], token: String) {
-        receivedWinningToken = token
-        receivedUpdatedSpaces = spaces
         receivedGameEndedInWinner = true
     }
 }

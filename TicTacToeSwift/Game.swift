@@ -1,43 +1,45 @@
 import Foundation
 
-class Game {
+class Game: GameProtocol {
     private var board: Board
-    private var currentToken: String
-    private var nextToken: String
-
-    init(board: Board, firstToken: String, secondToken: String) {
+    private var currentPlayer: Player
+    private var nextPlayer: Player
+    
+    init(board: Board, firstPlayer: Player, secondPlayer: Player) {
         self.board = board
-        self.currentToken = firstToken
-        self.nextToken = secondToken
-    }
-
-    func getCurrentToken() -> String {
-        return currentToken
-    }
-
-    func switchTokens() {
-        let lastToken = currentToken
-        currentToken = nextToken
-        nextToken = lastToken
+        self.currentPlayer = firstPlayer
+        self.nextPlayer = secondPlayer
     }
     
+    func getCurrentPlayer() -> Player {
+        return currentPlayer
+    }
+
+    func switchPlayers() {
+        let lastPlayer = currentPlayer
+        currentPlayer = nextPlayer
+        nextPlayer = lastPlayer
+    }
+
     func move(space: Int) {
-        board.place(token: currentToken, space: space)
+        board.place(token: currentPlayer.token, space: space)
     }
 
     func spaces() -> [String] {
         return board.getSpaces()
     }
-
+    
     func isOver() -> Bool {
         return VictoryConditions().isGameOver(board: board)
     }
-
+    
     func wasDraw() -> Bool {
         return VictoryConditions().isDraw(board: board)
     }
-
+    
     func winningToken() -> String? {
         return VictoryConditions().winningToken(board: board)
     }
+    
+
 }

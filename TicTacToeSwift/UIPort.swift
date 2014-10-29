@@ -1,17 +1,17 @@
 import Foundation
 
 class UIPort {
-    let game: Game
+    let game: GameProtocol
     let adapter: UIAdapterProtocol
 
-    init(game: Game, adapter: UIAdapterProtocol) {
+    init(game: GameProtocol, adapter: UIAdapterProtocol) {
         self.game = game
         self.adapter = adapter
     }
 
     func makeMove(#move: Int) {
         game.move(move)
-        game.switchTokens()
+        game.switchPlayers()
         if game.isOver() {
             endGame()
         } else {

@@ -4,7 +4,9 @@ import Swiftest
 class IntegrationTests: SwiftestSuite {
   let spec = describe("A game between two users") {
     it("ends with a winner") {
-        let game = Game(board: Board(), firstToken: "X", secondToken: "O")
+        let game = Game(board: Board(),
+                        firstPlayer: Player(token: "X", type: PlayerType.Human),
+                        secondPlayer: Player(token: "O", type: PlayerType.Human))
         let adapter = MockUIAdapter()
         let port = UIPort(game: game, adapter: adapter)
 
@@ -17,7 +19,9 @@ class IntegrationTests: SwiftestSuite {
     }
 
     it("ends with a draw") {
-        let game = Game(board: Board(), firstToken: "X", secondToken: "O")
+        let game = Game(board: Board(),
+                        firstPlayer: Player(token: "X", type: PlayerType.Human),
+                        secondPlayer: Player(token: "O", type: PlayerType.Human))
         let adapter = MockUIAdapter()
         let port = UIPort(game: game, adapter: adapter)
         
@@ -30,7 +34,7 @@ class IntegrationTests: SwiftestSuite {
         port.makeMove(move: 7)
         port.makeMove(move: 8)
         port.makeMove(move: 5)
-        expect(adapter.drawMessageReceived).to(.Be(true))
+        expect(adapter.receivedGameEndedInDraw).to(.Be(true))
     }
   }
 }

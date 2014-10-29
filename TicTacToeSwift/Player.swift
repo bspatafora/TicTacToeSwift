@@ -14,3 +14,7 @@ struct Player {
         self.type = type
     }
 }
+
+func ==(rhs: Player, lhs: Player) -> Bool {
+    return rhs.token == lhs.token
+}
