@@ -19,7 +19,7 @@ class ViewController: UIViewController, UIAdapterProtocol {
     override func viewDidLoad() {
         buttons = [button0, button1, button2, button3, button4, button5, button6, button7, button8]
         let firstPlayer = Player(token: "X", type: PlayerType.Human)
-        let secondPlayer = Player(token: "O", type: PlayerType.Human)
+        let secondPlayer = MinimaxPlayer(token: "O", type: PlayerType.AI)
         game = Game(board: Board(),
             firstPlayer: firstPlayer,
             secondPlayer: secondPlayer)

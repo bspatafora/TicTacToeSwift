@@ -14,7 +14,7 @@ class Player {
         self.type = type
     }
 
-    func move(spaces: [String]) -> Int {
+    func move(#spaces: [String]) -> Int {
         return -1
     }
 }
