@@ -14,7 +14,11 @@ class UIPort {
         if game.isOver() {
             endGame()
         } else {
-            updateBoard()
+            if game.getCurrentPlayer().type == PlayerType.AI {
+                makeMove(move: game.getCurrentPlayer().move(game.spaces()))
+            } else {
+                updateBoard()
+            }
         }
     }
 

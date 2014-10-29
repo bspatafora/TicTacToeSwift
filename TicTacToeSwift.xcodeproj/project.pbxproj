@@ -39,6 +39,7 @@
 		B5A71D021A0188CD008A19FD /* MockGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D011A0188CD008A19FD /* MockGame.swift */; };
 		B5A71D041A0189E7008A19FD /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D031A0189E7008A19FD /* GameProtocol.swift */; };
 		B5A71D051A0189E7008A19FD /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D031A0189E7008A19FD /* GameProtocol.swift */; };
+		B5A71D071A01917E008A19FD /* MockAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D061A01917E008A19FD /* MockAIPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		B5A71CFF1A01848F008A19FD /* PlayerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSpec.swift; sourceTree = "<group>"; };
 		B5A71D011A0188CD008A19FD /* MockGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockGame.swift; sourceTree = "<group>"; };
 		B5A71D031A0189E7008A19FD /* GameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		B5A71D061A01917E008A19FD /* MockAIPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAIPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */,
 				B5A71CFF1A01848F008A19FD /* PlayerSpec.swift */,
 				B5A71D011A0188CD008A19FD /* MockGame.swift */,
+				B5A71D061A01917E008A19FD /* MockAIPlayer.swift */,
 			);
 			path = TicTacToeSwiftSpecs;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				B5A71CFD1A018389008A19FD /* Player.swift in Sources */,
 				B559559C19EDBC6600275421 /* Board.swift in Sources */,
 				B5A71D051A0189E7008A19FD /* GameProtocol.swift in Sources */,
+				B5A71D071A01917E008A19FD /* MockAIPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

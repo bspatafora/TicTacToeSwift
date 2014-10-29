@@ -5,13 +5,17 @@ enum PlayerType {
     case AI
 }
 
-struct Player {
+class Player {
     let token: String
     let type: PlayerType
     
     init(token: String, type: PlayerType) {
         self.token = token
         self.type = type
+    }
+
+    func move(spaces: [String]) -> Int {
+        return -1
     }
 }
 
