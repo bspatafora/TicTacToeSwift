@@ -31,6 +31,8 @@
 		B55955A619EDD46B00275421 /* VictoryConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A419EDD46B00275421 /* VictoryConditions.swift */; };
 		B55955A819EDD47D00275421 /* VictoryConditionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */; };
 		B55955AA19EDF64B00275421 /* TestBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A919EDF64B00275421 /* TestBoard.swift */; };
+		B5A71CF11A016E2E008A19FD /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */; };
+		B5A71CF31A016FAB008A19FD /* MockUIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		B55955A419EDD46B00275421 /* VictoryConditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoryConditions.swift; sourceTree = "<group>"; };
 		B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoryConditionsSpec.swift; sourceTree = "<group>"; };
 		B55955A919EDF64B00275421 /* TestBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBoard.swift; sourceTree = "<group>"; };
+		B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
+		B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUIAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 				B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */,
 				B55955A919EDF64B00275421 /* TestBoard.swift */,
 				B547359B19F052E800B4DC6F /* UIPortSpec.swift */,
+				B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */,
+				B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */,
 			);
 			path = TicTacToeSwiftSpecs;
 			sourceTree = "<group>";
@@ -331,6 +337,8 @@
 				B52C6DAD19EC802E00F8D7E2 /* AppDelegate.swift in Sources */,
 				B55955AA19EDF64B00275421 /* TestBoard.swift in Sources */,
 				B547359F19F0555400B4DC6F /* UIAdapterProtocol.swift in Sources */,
+				B5A71CF11A016E2E008A19FD /* IntegrationTests.swift in Sources */,
+				B5A71CF31A016FAB008A19FD /* MockUIAdapter.swift in Sources */,
 				B547359C19F052E800B4DC6F /* UIPortSpec.swift in Sources */,
 				B55955A119EDC9E400275421 /* Game.swift in Sources */,
 				B55955A819EDD47D00275421 /* VictoryConditionsSpec.swift in Sources */,

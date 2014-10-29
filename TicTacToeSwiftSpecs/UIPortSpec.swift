@@ -1,26 +1,6 @@
 import Foundation
 import Swiftest
 
-class MockUIAdapter: UIAdapterProtocol {
-    var receivedUpdatedSpaces: [String]?
-    var drawMessageReceived = false
-    var receivedWinningToken: String?
-
-    func boardWasUpdated(#spaces: [String]) {
-        receivedUpdatedSpaces = spaces
-    }
-    
-    func gameEndedInDraw(#spaces: [String]) {
-        drawMessageReceived = true
-        receivedUpdatedSpaces = spaces
-    }
-    
-    func gameEndedInWinner(#spaces: [String], token: String) {
-        receivedWinningToken = token
-        receivedUpdatedSpaces = spaces
-    }
-}
-
 class UIPortSpec: SwiftestSuite {
     let spec = describe("UIPort") {
         it("sends its adapter updated spaces when game continues") {
