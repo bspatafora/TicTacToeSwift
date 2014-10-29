@@ -13,18 +13,6 @@ class GameSpec: SwiftestSuite {
             expect(game.getCurrentPlayer() == firstPlayer).to(.Be(true))
         }
 
-        it("updates the current player") {
-            let firstPlayer = Player(token: "X", type: PlayerType.Human)
-            let secondPlayer = Player(token: "O", type: PlayerType.Human)
-            let game = Game(board: Board(),
-                            firstPlayer: firstPlayer,
-                            secondPlayer: secondPlayer)
-
-            expect(game.getCurrentPlayer() == firstPlayer).to(.Be(true))
-            game.switchPlayers()
-            expect(game.getCurrentPlayer() == firstPlayer).to(.Be(false))
-        }
-
         it("makes moves for the current player") {
             let board = Board()
             let firstPlayer = Player(token: "X", type: PlayerType.Human)
@@ -35,6 +23,18 @@ class GameSpec: SwiftestSuite {
 
             game.move(4)
             expect(board.space(4)).to(.Equal("X"))
+        }
+
+        it("updates the current player") {
+            let firstPlayer = Player(token: "X", type: PlayerType.Human)
+            let secondPlayer = Player(token: "O", type: PlayerType.Human)
+            let game = Game(board: Board(),
+                firstPlayer: firstPlayer,
+                secondPlayer: secondPlayer)
+            
+            expect(game.getCurrentPlayer() == firstPlayer).to(.Be(true))
+            game.move(0)
+            expect(game.getCurrentPlayer() == firstPlayer).to(.Be(false))
         }
 
         it("returns its board’s spaces") {

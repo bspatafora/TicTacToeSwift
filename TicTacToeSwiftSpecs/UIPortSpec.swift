@@ -12,15 +12,6 @@ class UIPortSpec: SwiftestSuite {
             expect(adapter.receivedBoardWasUpdated).to(.Be(true))
         }
         
-        it("switches the players") {
-            let game = MockGame()
-            let adapter = MockUIAdapter()
-            let port = UIPort(game: game, adapter: adapter)
-            
-            port.makeMove(move: 0)
-            expect(game.receivedSwitchPlayers).to(.Be(true))
-        }
-        
         it("tells its adapter when the game ended in a draw") {
             let game = MockGame()
             let adapter = MockUIAdapter()

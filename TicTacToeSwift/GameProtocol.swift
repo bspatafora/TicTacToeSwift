@@ -3,8 +3,6 @@ import Foundation
 protocol GameProtocol {
     func getCurrentPlayer() -> Player
     
-    func switchPlayers()
-    
     func move(space: Int)
     
     func spaces() -> [String]

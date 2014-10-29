@@ -2,7 +2,6 @@ import Foundation
 
 class MockGame: GameProtocol {
     var receivedMove = false
-    var receivedSwitchPlayers = false
     var isOverFlag = false
     var wasDrawFlag = false
     
@@ -16,10 +15,6 @@ class MockGame: GameProtocol {
 
     func getCurrentPlayer() -> Player {
         return Player(token: "T", type: PlayerType.AI)
-    }
-
-    func switchPlayers() {
-        receivedSwitchPlayers = true
     }
     
     func move(space: Int) {

@@ -15,14 +15,9 @@ class Game: GameProtocol {
         return currentPlayer
     }
 
-    func switchPlayers() {
-        let lastPlayer = currentPlayer
-        currentPlayer = nextPlayer
-        nextPlayer = lastPlayer
-    }
-
     func move(space: Int) {
         board.place(token: currentPlayer.token, space: space)
+        switchPlayers()
     }
 
     func spaces() -> [String] {
@@ -41,5 +36,9 @@ class Game: GameProtocol {
         return VictoryConditions().winningToken(board: board)
     }
     
-
+    private func switchPlayers() {
+        let lastPlayer = currentPlayer
+        currentPlayer = nextPlayer
+        nextPlayer = lastPlayer
+    }
 }

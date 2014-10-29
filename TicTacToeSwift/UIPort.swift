@@ -11,7 +11,6 @@ class UIPort {
 
     func makeMove(#move: Int) {
         game.move(move)
-        game.switchPlayers()
         if game.isOver() {
             endGame()
         } else {
