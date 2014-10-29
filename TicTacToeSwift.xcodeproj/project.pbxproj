@@ -33,6 +33,9 @@
 		B55955AA19EDF64B00275421 /* TestBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A919EDF64B00275421 /* TestBoard.swift */; };
 		B5A71CF11A016E2E008A19FD /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */; };
 		B5A71CF31A016FAB008A19FD /* MockUIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */; };
+		B5A71CFC1A018389008A19FD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CFB1A018389008A19FD /* Player.swift */; };
+		B5A71CFD1A018389008A19FD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CFB1A018389008A19FD /* Player.swift */; };
+		B5A71D001A01848F008A19FD /* PlayerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CFF1A01848F008A19FD /* PlayerSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,8 @@
 		B55955A919EDF64B00275421 /* TestBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBoard.swift; sourceTree = "<group>"; };
 		B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUIAdapter.swift; sourceTree = "<group>"; };
+		B5A71CFB1A018389008A19FD /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B5A71CFF1A01848F008A19FD /* PlayerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,7 @@
 				B55955A419EDD46B00275421 /* VictoryConditions.swift */,
 				B547359619F052D500B4DC6F /* UIPort.swift */,
 				B547359D19F0555400B4DC6F /* UIAdapterProtocol.swift */,
+				B5A71CFB1A018389008A19FD /* Player.swift */,
 			);
 			path = TicTacToeSwift;
 			sourceTree = "<group>";
@@ -173,6 +179,7 @@
 				B547359B19F052E800B4DC6F /* UIPortSpec.swift */,
 				B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */,
 				B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */,
+				B5A71CFF1A01848F008A19FD /* PlayerSpec.swift */,
 			);
 			path = TicTacToeSwiftSpecs;
 			sourceTree = "<group>";
@@ -323,6 +330,7 @@
 				B52C6D7B19EC7FDB00F8D7E2 /* ViewController.swift in Sources */,
 				B52C6D7919EC7FDB00F8D7E2 /* AppDelegate.swift in Sources */,
 				B559559B19EDBC6600275421 /* Board.swift in Sources */,
+				B5A71CFC1A018389008A19FD /* Player.swift in Sources */,
 				B55955A019EDC9E400275421 /* Game.swift in Sources */,
 				B547359719F052D500B4DC6F /* UIPort.swift in Sources */,
 				B55955A519EDD46B00275421 /* VictoryConditions.swift in Sources */,
@@ -337,6 +345,7 @@
 				B52C6DAD19EC802E00F8D7E2 /* AppDelegate.swift in Sources */,
 				B55955AA19EDF64B00275421 /* TestBoard.swift in Sources */,
 				B547359F19F0555400B4DC6F /* UIAdapterProtocol.swift in Sources */,
+				B5A71D001A01848F008A19FD /* PlayerSpec.swift in Sources */,
 				B5A71CF11A016E2E008A19FD /* IntegrationTests.swift in Sources */,
 				B5A71CF31A016FAB008A19FD /* MockUIAdapter.swift in Sources */,
 				B547359C19F052E800B4DC6F /* UIPortSpec.swift in Sources */,
@@ -346,6 +355,7 @@
 				B547359819F052D500B4DC6F /* UIPort.swift in Sources */,
 				B559559E19EDBC7800275421 /* BoardSpec.swift in Sources */,
 				B52C6DAB19EC802E00F8D7E2 /* SwiftestController.swift in Sources */,
+				B5A71CFD1A018389008A19FD /* Player.swift in Sources */,
 				B559559C19EDBC6600275421 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
