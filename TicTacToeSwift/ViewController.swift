@@ -21,8 +21,8 @@ class ViewController: UIViewController, UIAdapterProtocol {
         let firstPlayer = Player(token: "X", type: PlayerType.Human)
         let secondPlayer = MinimaxPlayer(token: "O", type: PlayerType.AI)
         game = Game(board: Board(),
-            firstPlayer: firstPlayer,
-            secondPlayer: secondPlayer)
+                    firstPlayer: firstPlayer,
+                    secondPlayer: secondPlayer)
         port = UIPort(game: game, adapter: self)
     }
 
@@ -43,6 +43,11 @@ class ViewController: UIViewController, UIAdapterProtocol {
     func gameEndedInWinner(#spaces: [String], token: String) {
         updateAndDisableButtons(spaces)
         status.text = "\(token) wins!"
+    }
+
+    func serviceIsUnavailable() {
+        disableButtons()
+        status.text = "AI offline"
     }
 
     private func updateAndDisableButtons(spaces: [String]) {

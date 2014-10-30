@@ -42,7 +42,6 @@
 		B5A71D071A01917E008A19FD /* MockAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D061A01917E008A19FD /* MockAIPlayer.swift */; };
 		B5A71D091A01A209008A19FD /* MinimaxPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */; };
 		B5A71D0A1A01A209008A19FD /* MinimaxPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */; };
-		B5A71D0C1A01A2A3008A19FD /* MinimaxPlayerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D0B1A01A2A3008A19FD /* MinimaxPlayerSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +101,6 @@
 		B5A71D031A0189E7008A19FD /* GameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		B5A71D061A01917E008A19FD /* MockAIPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAIPlayer.swift; sourceTree = "<group>"; };
 		B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimaxPlayer.swift; sourceTree = "<group>"; };
-		B5A71D0B1A01A2A3008A19FD /* MinimaxPlayerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimaxPlayerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +194,6 @@
 				B5A71CFF1A01848F008A19FD /* PlayerSpec.swift */,
 				B5A71D011A0188CD008A19FD /* MockGame.swift */,
 				B5A71D061A01917E008A19FD /* MockAIPlayer.swift */,
-				B5A71D0B1A01A2A3008A19FD /* MinimaxPlayerSpec.swift */,
 			);
 			path = TicTacToeSwiftSpecs;
 			sourceTree = "<group>";
@@ -375,7 +372,6 @@
 				B55955A619EDD46B00275421 /* VictoryConditions.swift in Sources */,
 				B547359819F052D500B4DC6F /* UIPort.swift in Sources */,
 				B559559E19EDBC7800275421 /* BoardSpec.swift in Sources */,
-				B5A71D0C1A01A2A3008A19FD /* MinimaxPlayerSpec.swift in Sources */,
 				B52C6DAB19EC802E00F8D7E2 /* SwiftestController.swift in Sources */,
 				B5A71CFD1A018389008A19FD /* Player.swift in Sources */,
 				B559559C19EDBC6600275421 /* Board.swift in Sources */,

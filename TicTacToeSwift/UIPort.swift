@@ -14,11 +14,19 @@ class UIPort {
         if game.isOver() {
             endGame()
         } else {
-            if game.getCurrentPlayer().type == PlayerType.AI {
-                makeMove(move: game.getCurrentPlayer().move(spaces: game.spaces()))
+            continueGame()
+        }
+    }
+
+    private func continueGame() {
+        if game.currentPlayerIsAI() {
+            if let move = game.getCurrentPlayerMove() {
+                makeMove(move: move)
             } else {
-                updateBoard()
+                adapter.serviceIsUnavailable()
             }
+        } else {
+            updateUI()
         }
     }
 
@@ -30,7 +38,7 @@ class UIPort {
         }
     }
 
-    private func updateBoard() {
+    private func updateUI() {
         adapter.boardWasUpdated(spaces: game.spaces())
     }
 }

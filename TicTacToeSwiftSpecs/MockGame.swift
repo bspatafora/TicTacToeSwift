@@ -4,8 +4,9 @@ class MockGame: GameProtocol {
     var receivedMove = false
     var isOverFlag = false
     var wasDrawFlag = false
-    var currentPlayer: Player = Player(token: "X", type: PlayerType.Human)
-    var nextPlayer: Player = MockAIPlayer(token: "O", type: PlayerType.AI)
+    var receivedGetCurrentPlayerMove = false
+    var currentPlayerIsAIFlag = false
+    var currentPlayerMove: Int? = 4
 
     func setIsOver(flag: Bool) {
         isOverFlag = flag
@@ -15,8 +16,22 @@ class MockGame: GameProtocol {
         wasDrawFlag = flag
     }
 
-    func getCurrentPlayer() -> Player {
-        return currentPlayer
+    func setCurrentPlayerIsAI(flag: Bool) {
+        currentPlayerIsAIFlag = flag
+    }
+
+    func setCurrentPlayerMove(move: Int?) {
+        currentPlayerMove = move
+    }
+
+    func currentPlayerIsAI() -> Bool {
+        return currentPlayerIsAIFlag
+    }
+
+    func getCurrentPlayerMove() -> Int? {
+        receivedGetCurrentPlayerMove = true
+        currentPlayerIsAIFlag = false
+        return currentPlayerMove
     }
 
     func move(space: Int) {
@@ -37,11 +52,5 @@ class MockGame: GameProtocol {
 
     func winningToken() -> String? {
         return ""
-    }
-
-    private func switchPlayers() {
-        let lastPlayer = currentPlayer
-        currentPlayer = nextPlayer
-        nextPlayer = lastPlayer
     }
 }

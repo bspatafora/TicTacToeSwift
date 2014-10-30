@@ -1,10 +1,13 @@
 import Foundation
 
 class MinimaxPlayer: Player {
-    override func move(#spaces: [String]) -> Int {
+    override func move(#spaces: [String]) -> Int? {
         let request = buildRequest(spaces)
-        let response = responseData(request)
-        return parseMove(response)
+        if let response = responseData(request)? {
+            return parseMove(response)
+        } else {
+            return nil
+        }
     }
     
     private func buildRequest(spaces: [String]) -> NSMutableURLRequest {
@@ -16,10 +19,10 @@ class MinimaxPlayer: Player {
         return request
     }
     
-    private func responseData(request: NSMutableURLRequest) -> NSData {
+    private func responseData(request: NSMutableURLRequest) -> NSData? {
         var response: NSURLResponse?
         var connectionError: NSErrorPointer = nil
-        return NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: connectionError)!
+        return NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: connectionError)
     }
     
     private func parseMove(responseData: NSData) -> Int {

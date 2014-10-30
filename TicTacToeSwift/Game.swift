@@ -10,9 +10,13 @@ class Game: GameProtocol {
         self.currentPlayer = firstPlayer
         self.nextPlayer = secondPlayer
     }
-    
-    func getCurrentPlayer() -> Player {
-        return currentPlayer
+
+    func currentPlayerIsAI() -> Bool {
+        return currentPlayer.type == PlayerType.AI
+    }
+
+    func getCurrentPlayerMove() -> Int? {
+        return currentPlayer.move(spaces: spaces())
     }
 
     func move(space: Int) {

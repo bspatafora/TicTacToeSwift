@@ -11,7 +11,7 @@ class UIPortSpec: SwiftestSuite {
             port.makeMove(move: 0)
             expect(adapter.receivedBoardWasUpdated).to(.Be(true))
         }
-        
+
         it("tells its adapter when the game ended in a draw") {
             let game = MockGame()
             let adapter = MockUIAdapter()
@@ -22,7 +22,7 @@ class UIPortSpec: SwiftestSuite {
             port.makeMove(move: 0)
             expect(adapter.receivedGameEndedInDraw).to(.Be(true))
         }
-        
+
         it("tells its adapter when there is a winner") {
             let game = MockGame()
             let adapter = MockUIAdapter()
@@ -32,6 +32,27 @@ class UIPortSpec: SwiftestSuite {
             
             port.makeMove(move: 0)
             expect(adapter.receivedGameEndedInWinner).to(.Be(true))
+        }
+
+        it("asks its game for the current player’s move when it’s an AI") {
+            let game = MockGame()
+            let adapter = MockUIAdapter()
+            let port = UIPort(game: game, adapter: adapter)
+            game.setCurrentPlayerIsAI(true)
+
+            port.makeMove(move: 0)
+            expect(game.receivedGetCurrentPlayerMove).to(.Be(true))
+        }
+
+        it("tells its adapter when the AI service is unavailable") {
+            let game = MockGame()
+            let adapter = MockUIAdapter()
+            let port = UIPort(game: game, adapter: adapter)
+            game.setCurrentPlayerIsAI(true)
+            game.setCurrentPlayerMove(nil)
+            
+            port.makeMove(move: 0)
+            expect(adapter.receivedServiceIsUnavailable).to(.Be(true))
         }
     }
 }

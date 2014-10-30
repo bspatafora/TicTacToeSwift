@@ -1,7 +1,9 @@
 import Foundation
 
 protocol GameProtocol {
-    func getCurrentPlayer() -> Player
+    func currentPlayerIsAI() -> Bool
+
+    func getCurrentPlayerMove() -> Int?
     
     func move(space: Int)
     

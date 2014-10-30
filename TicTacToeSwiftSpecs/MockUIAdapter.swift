@@ -5,6 +5,7 @@ class MockUIAdapter: UIAdapterProtocol {
     var receivedGameEndedInDraw = false
     var receivedGameEndedInWinner = false
     var receivedGetMove = false
+    var receivedServiceIsUnavailable = false
     
     init() { } // Erroneous Swift compiler error when not present
     
@@ -23,5 +24,9 @@ class MockUIAdapter: UIAdapterProtocol {
     
     func gameEndedInWinner(#spaces: [String], token: String) {
         receivedGameEndedInWinner = true
+    }
+
+    func serviceIsUnavailable() {
+        receivedServiceIsUnavailable = true
     }
 }
