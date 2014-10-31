@@ -25,7 +25,7 @@ class MinimaxPlayer: Player {
     }
 
     private func buildRequest(spaces: [String]) -> NSMutableURLRequest {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:9000/"))
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:9000/")!)
         request.HTTPMethod = "POST"
         request.HTTPBody = serialize(spaces)
         return request
@@ -37,6 +37,6 @@ class MinimaxPlayer: Player {
     }
 
     private func parseMove(responseData: NSData) -> Int {
-        return NSString(data: responseData, encoding: NSUTF8StringEncoding).integerValue
+        return NSString(data: responseData, encoding: NSUTF8StringEncoding)!.integerValue
     }
 }
