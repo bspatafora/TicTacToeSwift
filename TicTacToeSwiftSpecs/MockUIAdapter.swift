@@ -17,6 +17,8 @@ class MockUIAdapter: UIAdapterProtocol {
     func boardWasUpdated(#spaces: [String]) {
         receivedBoardWasUpdated = true
     }
+
+    func boardWasUpdatedAndAIIsThinking(#spaces: [String]) { }
     
     func gameEndedInDraw(#spaces: [String]) {
         receivedGameEndedInDraw = true

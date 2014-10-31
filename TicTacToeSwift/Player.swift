@@ -14,9 +14,7 @@ class Player {
         self.type = type
     }
 
-    func move(#spaces: [String]) -> Int? {
-        return -1
-    }
+    func move(#spaces: [String], receiver: MoveReceiver) { }
 }
 
 func ==(rhs: Player, lhs: Player) -> Bool {

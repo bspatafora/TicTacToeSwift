@@ -14,6 +14,13 @@ class BoardSpec: SwiftestSuite {
             expect(board.space(0)).to(.Equal(" "))
         }
 
+        it("knows whether a space is empty") {
+            let board = Board()
+            board.place(token: "X", space: 1)
+            expect(board.isSpaceEmpty(0)).to(.Be(true))
+            expect(board.isSpaceEmpty(1)).to(.Be(false))
+        }
+
         it("provides its spaces") {
             let board = Board()
             expect(board.getSpaces()).to(.Equal([" ", " ", " ",

@@ -1,6 +1,6 @@
 import Foundation
 
-class UIPort {
+class UIPort: MoveReceiver {
     let game: GameProtocol
     let adapter: UIAdapterProtocol
 
@@ -9,24 +9,25 @@ class UIPort {
         self.adapter = adapter
     }
 
-    func makeMove(#move: Int) {
-        game.move(move)
-        if game.isOver() {
-            endGame()
+    func makeMove(var #move: Int?) {
+        if let move = move {
+            game.move(move)
+            if game.isOver() {
+                endGame()
+            } else {
+                continueGame()
+            }
         } else {
-            continueGame()
+            adapter.serviceIsUnavailable()
         }
     }
 
     private func continueGame() {
         if game.currentPlayerIsAI() {
-            if let move = game.getCurrentPlayerMove() {
-                makeMove(move: move)
-            } else {
-                adapter.serviceIsUnavailable()
-            }
+            adapter.boardWasUpdatedAndAIIsThinking(spaces: game.spaces())
+            game.currentPlayerMove(receiver: self)
         } else {
-            updateUI()
+            adapter.boardWasUpdated(spaces: game.spaces())
         }
     }
 
@@ -36,9 +37,5 @@ class UIPort {
         } else {
             adapter.gameEndedInWinner(spaces: game.spaces(), token: game.winningToken()!)
         }
-    }
-
-    private func updateUI() {
-        adapter.boardWasUpdated(spaces: game.spaces())
     }
 }

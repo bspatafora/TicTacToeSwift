@@ -41,17 +41,15 @@ class UIPortSpec: SwiftestSuite {
             game.setCurrentPlayerIsAI(true)
 
             port.makeMove(move: 0)
-            expect(game.receivedGetCurrentPlayerMove).to(.Be(true))
+            expect(game.receivedCurrentPlayerMove).to(.Be(true))
         }
 
         it("tells its adapter when the AI service is unavailable") {
             let game = MockGame()
             let adapter = MockUIAdapter()
             let port = UIPort(game: game, adapter: adapter)
-            game.setCurrentPlayerIsAI(true)
-            game.setCurrentPlayerMove(nil)
             
-            port.makeMove(move: 0)
+            port.makeMove(move: nil)
             expect(adapter.receivedServiceIsUnavailable).to(.Be(true))
         }
     }

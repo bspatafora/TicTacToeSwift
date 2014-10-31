@@ -27,12 +27,19 @@ class ViewController: UIViewController, UIAdapterProtocol {
     }
 
     @IBAction func buttonTouch(sender: UIButton) {
-        disableButton(sender)
+        disableButtons()
         port.makeMove(move: sender.tag)
     }
 
     func boardWasUpdated(#spaces: [String]) {
         updateButtons(spaces)
+        enableButtons(spaces: spaces)
+        status.text = nil
+    }
+
+    func boardWasUpdatedAndAIIsThinking(#spaces: [String]) {
+        updateButtons(spaces)
+        status.text = "Thinking"
     }
 
     func gameEndedInDraw(#spaces: [String]) {
@@ -64,11 +71,15 @@ class ViewController: UIViewController, UIAdapterProtocol {
 
     private func disableButtons() {
         for button in buttons {
-            disableButton(button)
+            button.enabled = false
         }
     }
 
-    private func disableButton(button: UIButton) {
-        button.enabled = false
+    private func enableButtons(#spaces: [String]) {
+        for (space, button) in enumerate(buttons) {
+            if game.isSpaceOpen(space) {
+                button.enabled = true
+            }
+        }
     }
 }
