@@ -4,9 +4,10 @@ class MockGame: GameProtocol {
     var receivedMove = false
     var isOverFlag = false
     var wasDrawFlag = false
-    var receivedGetCurrentPlayerMove = false
     var currentPlayerIsAIFlag = false
-    var currentPlayerMove: Int? = 4
+    var receivedCurrentPlayerMove = false
+
+    init() { }
 
     func setIsOver(flag: Bool) {
         isOverFlag = flag
@@ -20,18 +21,12 @@ class MockGame: GameProtocol {
         currentPlayerIsAIFlag = flag
     }
 
-    func setCurrentPlayerMove(move: Int?) {
-        currentPlayerMove = move
-    }
-
     func currentPlayerIsAI() -> Bool {
         return currentPlayerIsAIFlag
     }
 
-    func getCurrentPlayerMove() -> Int? {
-        receivedGetCurrentPlayerMove = true
-        currentPlayerIsAIFlag = false
-        return currentPlayerMove
+    func currentPlayerMove(#receiver: MoveReceiver) {
+        receivedCurrentPlayerMove = true
     }
 
     func move(space: Int) {
@@ -40,6 +35,10 @@ class MockGame: GameProtocol {
 
     func spaces() -> [String] {
         return []
+    }
+
+    func isSpaceOpen(spaces: Int) -> Bool {
+        return false
     }
 
     func isOver() -> Bool {

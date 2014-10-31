@@ -18,6 +18,10 @@ class Board {
         return spaces[space]
     }
 
+    func isSpaceEmpty(space: Int) -> Bool {
+        return spaces[space] == emptySpace
+    }
+
     func getSpaces() -> [String] {
         return spaces
     }

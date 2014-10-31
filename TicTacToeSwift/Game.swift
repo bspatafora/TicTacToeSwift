@@ -15,8 +15,8 @@ class Game: GameProtocol {
         return currentPlayer.type == PlayerType.AI
     }
 
-    func getCurrentPlayerMove() -> Int? {
-        return currentPlayer.move(spaces: spaces())
+    func currentPlayerMove(#receiver: MoveReceiver) {
+        currentPlayer.move(spaces: spaces(), receiver: receiver)
     }
 
     func move(space: Int) {
@@ -26,6 +26,10 @@ class Game: GameProtocol {
 
     func spaces() -> [String] {
         return board.getSpaces()
+    }
+
+    func isSpaceOpen(space: Int) -> Bool {
+        return board.isSpaceEmpty(space)
     }
     
     func isOver() -> Bool {

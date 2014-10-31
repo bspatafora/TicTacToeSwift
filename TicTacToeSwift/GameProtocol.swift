@@ -3,11 +3,13 @@ import Foundation
 protocol GameProtocol {
     func currentPlayerIsAI() -> Bool
 
-    func getCurrentPlayerMove() -> Int?
+    func currentPlayerMove(#receiver: MoveReceiver)
     
     func move(space: Int)
     
     func spaces() -> [String]
+
+    func isSpaceOpen(spaces: Int) -> Bool
     
     func isOver() -> Bool
     

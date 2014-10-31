@@ -1,32 +1,42 @@
 import Foundation
 
 class MinimaxPlayer: Player {
-    override func move(#spaces: [String]) -> Int? {
-        let request = buildRequest(spaces)
-        if let response = responseData(request)? {
-            return parseMove(response)
+    var receiver: MoveReceiver?
+
+    override func move(#spaces: [String], receiver: MoveReceiver) {
+        self.receiver = receiver
+        responseData(buildRequest(spaces))
+    }
+
+    private func responseData(request: NSMutableURLRequest) {
+        var response: NSURLResponse?
+        var data: NSData?
+        var error: NSError?
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response, data, error) in self.sendMove(data)})
+    }
+
+    private func sendMove(responseData: NSData?) {
+        let receiver = self.receiver!
+        if let response = responseData {
+            receiver.makeMove(move: parseMove(response))
         } else {
-            return nil
+            receiver.makeMove(move: nil)
         }
     }
-    
+
     private func buildRequest(spaces: [String]) -> NSMutableURLRequest {
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:9000/"))
-        var serializationError: NSError?
-        let boardData = NSJSONSerialization.dataWithJSONObject(spaces, options: nil, error: &serializationError)
         request.HTTPMethod = "POST"
-        request.HTTPBody = boardData
+        request.HTTPBody = serialize(spaces)
         return request
     }
-    
-    private func responseData(request: NSMutableURLRequest) -> NSData? {
-        var response: NSURLResponse?
-        var connectionError: NSErrorPointer = nil
-        return NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: connectionError)
+
+    private func serialize(spaces: [String]) -> NSData {
+        var error: NSError?
+        return NSJSONSerialization.dataWithJSONObject(spaces, options: nil, error: &error)!
     }
-    
+
     private func parseMove(responseData: NSData) -> Int {
-        let responseDataString = NSString(data: responseData, encoding: NSUTF8StringEncoding)
-        return responseDataString.integerValue
+        return NSString(data: responseData, encoding: NSUTF8StringEncoding).integerValue
     }
 }
