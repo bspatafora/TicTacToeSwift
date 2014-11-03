@@ -19,6 +19,7 @@
 		B52C6DAD19EC802E00F8D7E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C6DAC19EC802E00F8D7E2 /* AppDelegate.swift */; };
 		B52C6DB019EC802E00F8D7E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52C6DAE19EC802E00F8D7E2 /* Main.storyboard */; };
 		B52C6DB219EC802E00F8D7E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52C6DB119EC802E00F8D7E2 /* Images.xcassets */; };
+		B542F1331A07F63E00B755B9 /* ThreeByThreeBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B542F1321A07F63E00B755B9 /* ThreeByThreeBoardView.xib */; };
 		B547359719F052D500B4DC6F /* UIPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B547359619F052D500B4DC6F /* UIPort.swift */; };
 		B547359819F052D500B4DC6F /* UIPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B547359619F052D500B4DC6F /* UIPort.swift */; };
 		B547359C19F052E800B4DC6F /* UIPortSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B547359B19F052E800B4DC6F /* UIPortSpec.swift */; };
@@ -88,6 +89,7 @@
 		B52C6DAC19EC802E00F8D7E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Support/AppDelegate.swift; sourceTree = "<group>"; };
 		B52C6DAF19EC802E00F8D7E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B52C6DB119EC802E00F8D7E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B542F1321A07F63E00B755B9 /* ThreeByThreeBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeByThreeBoardView.xib; sourceTree = "<group>"; };
 		B547359619F052D500B4DC6F /* UIPort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPort.swift; sourceTree = "<group>"; };
 		B547359B19F052E800B4DC6F /* UIPortSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPortSpec.swift; sourceTree = "<group>"; };
 		B547359D19F0555400B4DC6F /* UIAdapterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAdapterProtocol.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				B5A71CFB1A018389008A19FD /* Player.swift */,
 				B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */,
 				B523857F1A02E41900852CC7 /* MoveReceiver.swift */,
+				B542F1321A07F63E00B755B9 /* ThreeByThreeBoardView.xib */,
 			);
 			path = TicTacToeSwift;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				B52C6D7E19EC7FDB00F8D7E2 /* Main.storyboard in Resources */,
 				B52C6D8319EC7FDB00F8D7E2 /* LaunchScreen.xib in Resources */,
 				B52C6D8019EC7FDB00F8D7E2 /* Images.xcassets in Resources */,
+				B542F1331A07F63E00B755B9 /* ThreeByThreeBoardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
