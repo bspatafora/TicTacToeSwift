@@ -1,14 +1,14 @@
 import UIKit
 
 class ViewController: UIViewController, UIAdapterProtocol {
-    @IBOutlet var board: UIView!
+    @IBOutlet var board: BoardView!
     @IBOutlet var status: UILabel!
     var boardButtons: [UIButton]!
     var game: Game!
     var port: UIPort!
 
     override func viewDidLoad() {
-        boardButtons = board.subviews as [UIButton]
+        boardButtons = board.buttons()
         let firstPlayer = Player(token: "X", type: PlayerType.Human)
         let secondPlayer = MinimaxPlayer(token: "O", type: PlayerType.AI)
         game = Game(board: Board(),

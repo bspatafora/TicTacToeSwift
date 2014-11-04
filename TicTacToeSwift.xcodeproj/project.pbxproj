@@ -35,6 +35,7 @@
 		B55955A619EDD46B00275421 /* VictoryConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A419EDD46B00275421 /* VictoryConditions.swift */; };
 		B55955A819EDD47D00275421 /* VictoryConditionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */; };
 		B55955AA19EDF64B00275421 /* TestBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55955A919EDF64B00275421 /* TestBoard.swift */; };
+		B595D5431A0880F4005258AF /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595D5421A0880F4005258AF /* BoardView.swift */; };
 		B5A71CF11A016E2E008A19FD /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */; };
 		B5A71CF31A016FAB008A19FD /* MockUIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */; };
 		B5A71CFC1A018389008A19FD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71CFB1A018389008A19FD /* Player.swift */; };
@@ -100,6 +101,7 @@
 		B55955A419EDD46B00275421 /* VictoryConditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoryConditions.swift; sourceTree = "<group>"; };
 		B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VictoryConditionsSpec.swift; sourceTree = "<group>"; };
 		B55955A919EDF64B00275421 /* TestBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBoard.swift; sourceTree = "<group>"; };
+		B595D5421A0880F4005258AF /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUIAdapter.swift; sourceTree = "<group>"; };
 		B5A71CFB1A018389008A19FD /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */,
 				B523857F1A02E41900852CC7 /* MoveReceiver.swift */,
 				B542F1321A07F63E00B755B9 /* ThreeByThreeBoardView.xib */,
+				B595D5421A0880F4005258AF /* BoardView.swift */,
 			);
 			path = TicTacToeSwift;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				B52385801A02E41900852CC7 /* MoveReceiver.swift in Sources */,
 				B55955A019EDC9E400275421 /* Game.swift in Sources */,
 				B547359719F052D500B4DC6F /* UIPort.swift in Sources */,
+				B595D5431A0880F4005258AF /* BoardView.swift in Sources */,
 				B55955A519EDD46B00275421 /* VictoryConditions.swift in Sources */,
 				B5A71D041A0189E7008A19FD /* GameProtocol.swift in Sources */,
 			);
