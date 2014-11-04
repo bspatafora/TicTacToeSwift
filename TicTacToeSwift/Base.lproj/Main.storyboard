@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="GameView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HYd-EJ-NP8" userLabel="ThreeByThreeBoardView">
-                                <rect key="frame" x="40" y="164" width="241" height="240"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYd-EJ-NP8" userLabel="ThreeByThreeBoardView">
+                                <rect key="frame" x="180" y="58" width="241" height="240"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InZ-ha-UnU" userLabel="Space0">
                                         <rect key="frame" x="0.0" y="-1" width="75" height="75"/>
@@ -120,17 +120,30 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="e7D-Wk-gMb"/>
+                                    <constraint firstAttribute="width" constant="241" id="l29-OQ-R0c"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRW-a2-acf" userLabel="Status">
-                                <rect key="frame" x="118" y="114" width="85" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRW-a2-acf" userLabel="Status">
+                                <rect key="frame" x="258" y="28" width="85" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="US0-QB-Ocb"/>
+                                    <constraint firstAttribute="height" constant="22" id="Yup-fe-dGe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HYd-EJ-NP8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="WyB-dR-G94"/>
+                            <constraint firstAttribute="centerX" secondItem="lRW-a2-acf" secondAttribute="centerX" constant="-0.5" id="hKO-jj-8Ck"/>
+                            <constraint firstItem="HYd-EJ-NP8" firstAttribute="top" secondItem="lRW-a2-acf" secondAttribute="top" constant="30" id="rxu-Jw-2Wd"/>
+                            <constraint firstAttribute="centerX" secondItem="HYd-EJ-NP8" secondAttribute="centerX" constant="-0.5" id="z3k-uD-5Bq"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="board" destination="HYd-EJ-NP8" id="z8e-PV-a6X"/>
                         <outlet property="status" destination="lRW-a2-acf" id="Kd1-zW-PYP"/>
