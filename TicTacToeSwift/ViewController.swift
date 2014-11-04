@@ -1,23 +1,14 @@
 import UIKit
 
 class ViewController: UIViewController, UIAdapterProtocol {
-    @IBOutlet var button0: UIButton!
-    @IBOutlet var button1: UIButton!
-    @IBOutlet var button2: UIButton!
-    @IBOutlet var button3: UIButton!
-    @IBOutlet var button4: UIButton!
-    @IBOutlet var button5: UIButton!
-    @IBOutlet var button6: UIButton!
-    @IBOutlet var button7: UIButton!
-    @IBOutlet var button8: UIButton!
+    @IBOutlet var board: BoardView!
     @IBOutlet var status: UILabel!
-
-    var buttons: [UIButton]!
+    var boardButtons: [UIButton]!
     var game: Game!
     var port: UIPort!
 
     override func viewDidLoad() {
-        buttons = [button0, button1, button2, button3, button4, button5, button6, button7, button8]
+        boardButtons = board.buttons()
         let firstPlayer = Player(token: "X", type: PlayerType.Human)
         let secondPlayer = MinimaxPlayer(token: "O", type: PlayerType.AI)
         game = Game(board: Board(),
@@ -26,7 +17,7 @@ class ViewController: UIViewController, UIAdapterProtocol {
         port = UIPort(game: game, adapter: self)
     }
 
-    @IBAction func buttonTouch(sender: UIButton) {
+    @IBAction func userMove(sender: UIButton) {
         disableButtons()
         port.makeMove(move: sender.tag)
     }
@@ -63,21 +54,21 @@ class ViewController: UIViewController, UIAdapterProtocol {
     }
 
     private func updateButtons(spaces: [String]) {
-        for (space, button) in enumerate(buttons) {
-            button.setTitle(spaces[space],
+        for (index, button) in enumerate(boardButtons) {
+            button.setTitle(spaces[index],
                             forState: UIControlState.Normal)
         }
     }
 
     private func disableButtons() {
-        for button in buttons {
+        for button in boardButtons {
             button.enabled = false
         }
     }
 
     private func enableButtons(#spaces: [String]) {
-        for (space, button) in enumerate(buttons) {
-            if game.isSpaceOpen(space) {
+        for (index, button) in enumerate(boardButtons) {
+            if game.isSpaceOpen(index) {
                 button.enabled = true
             }
         }
