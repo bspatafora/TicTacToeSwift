@@ -3,61 +3,82 @@ import UIKit
 class ViewController: UIViewController, UIAdapterProtocol {
     @IBOutlet var board: BoardView!
     @IBOutlet var status: UILabel!
+    @IBOutlet var newGameButton: UIButton!
     var boardButtons: [UIButton]!
     var game: Game!
     var port: UIPort!
 
     override func viewDidLoad() {
         boardButtons = board.buttons()
-        let firstPlayer = Player(token: "X", type: PlayerType.Human)
-        let secondPlayer = MinimaxPlayer(token: "O", type: PlayerType.AI)
-        game = Game(board: Board(),
-                    firstPlayer: firstPlayer,
-                    secondPlayer: secondPlayer)
-        port = UIPort(game: game, adapter: self)
+        newGame()
     }
 
-    @IBAction func userMove(sender: UIButton) {
+    @IBAction func tapNewGame(sender: UIButton) {
+        if game.isOver() {
+            resetGame()
+        } else {
+            confirmNewGame()
+        }
+    }
+
+    @IBAction func tapBoardButton(sender: UIButton) {
         disableButtons()
+        disableNewGameButton()
         port.makeMove(move: sender.tag)
     }
 
     func boardWasUpdated(#spaces: [String]) {
         updateButtons(spaces)
-        enableButtons(spaces: spaces)
-        status.text = nil
+        enableButtons(spaces)
+        enableNewGameButton()
+        setStatusText("")
     }
 
-    func boardWasUpdatedAndAIIsThinking(#spaces: [String]) {
+    func aiIsThinking(#spaces: [String]) {
         updateButtons(spaces)
-        status.text = "Thinking"
-    }
-
-    func gameEndedInDraw(#spaces: [String]) {
-        updateAndDisableButtons(spaces)
-        status.text = "Draw"
-    }
-
-    func gameEndedInWinner(#spaces: [String], token: String) {
-        updateAndDisableButtons(spaces)
-        status.text = "\(token) wins!"
+        setStatusText("Thinking")
     }
 
     func serviceIsUnavailable() {
         disableButtons()
-        status.text = "AI offline"
+        setStatusText("AI offline")
+        enableNewGameButton()
     }
 
-    private func updateAndDisableButtons(spaces: [String]) {
-        updateButtons(spaces)
+    func gameEndedInDraw(#spaces: [String]) {
+        endGame(spaces, outcome: "Draw")
+    }
+
+    func gameEndedInWinner(#spaces: [String], token: String) {
+        endGame(spaces, outcome: "\(token) wins!")
+    }
+
+    private func confirmNewGame() {
+        let alertController = UIAlertController(title: "Start a new game?", message: "This will end your current game.", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let defaultAction = UIAlertAction(title: "New Game", style: .Default) { (action) in self.resetGame() }
+
+        alertController.addAction(cancelAction)
+        alertController.addAction(defaultAction)
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+
+    private func resetGame() {
+        newGame()
+        resetButtons()
+        setStatusText("")
+    }
+
+    private func newGame() {
+        game = Game(board: Board(), firstPlayer: Player(token: "X", type: PlayerType.Human), secondPlayer: MinimaxPlayer(token: "O", type: PlayerType.AI))
+        port = UIPort(game: game, adapter: self)
+    }
+
+    private func endGame(spaces: [String], outcome: String) {
         disableButtons()
-    }
-
-    private func updateButtons(spaces: [String]) {
-        for (index, button) in enumerate(boardButtons) {
-            button.setTitle(spaces[index],
-                            forState: UIControlState.Normal)
-        }
+        updateButtons(spaces)
+        setStatusText(outcome)
+        enableNewGameButton()
     }
 
     private func disableButtons() {
@@ -66,11 +87,36 @@ class ViewController: UIViewController, UIAdapterProtocol {
         }
     }
 
-    private func enableButtons(#spaces: [String]) {
+    private func enableButtons(spaces: [String]) {
         for (index, button) in enumerate(boardButtons) {
             if game.isSpaceOpen(index) {
                 button.enabled = true
             }
         }
+    }
+
+    private func updateButtons(spaces: [String]) {
+        for (index, button) in enumerate(boardButtons) {
+            button.setTitle(spaces[index], forState: UIControlState.Normal)
+        }
+    }
+
+    private func resetButtons() {
+        for button in boardButtons {
+            button.enabled = true
+            button.setTitle(nil, forState: UIControlState.Normal)
+        }
+    }
+
+    private func setStatusText(message: String) {
+        status.text = message
+    }
+
+    private func disableNewGameButton() {
+        newGameButton.enabled = false
+    }
+
+    private func enableNewGameButton() {
+        newGameButton.enabled = true
     }
 }
