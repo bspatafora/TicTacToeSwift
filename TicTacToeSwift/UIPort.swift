@@ -24,7 +24,7 @@ class UIPort: MoveReceiver {
 
     private func continueGame() {
         if game.currentPlayerIsAI() {
-            adapter.boardWasUpdatedAndAIIsThinking(spaces: game.spaces())
+            adapter.aiIsThinking(spaces: game.spaces())
             game.currentPlayerMove(receiver: self)
         } else {
             adapter.boardWasUpdated(spaces: game.spaces())

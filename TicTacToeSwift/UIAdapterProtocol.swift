@@ -3,7 +3,7 @@ import Foundation
 protocol UIAdapterProtocol {
     func boardWasUpdated(#spaces: [String])
 
-    func boardWasUpdatedAndAIIsThinking(#spaces: [String])
+    func aiIsThinking(#spaces: [String])
 
     func gameEndedInDraw(#spaces: [String])
 
