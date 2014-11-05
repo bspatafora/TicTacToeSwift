@@ -25,7 +25,7 @@ class MinimaxPlayer: Player {
     }
 
     private func buildRequest(spaces: [String]) -> NSMutableURLRequest {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:9000/")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: Config.minimaxURL())!)
         request.HTTPMethod = "POST"
         request.HTTPBody = serialize(spaces)
         return request

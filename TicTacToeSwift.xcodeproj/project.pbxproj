@@ -47,6 +47,8 @@
 		B5A71D071A01917E008A19FD /* MockAIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D061A01917E008A19FD /* MockAIPlayer.swift */; };
 		B5A71D091A01A209008A19FD /* MinimaxPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */; };
 		B5A71D0A1A01A209008A19FD /* MinimaxPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */; };
+		B5C871021A0AB40500C30890 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C871011A0AB40500C30890 /* Config.swift */; };
+		B5C871031A0AB40500C30890 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C871011A0AB40500C30890 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,7 @@
 		B5A71D031A0189E7008A19FD /* GameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		B5A71D061A01917E008A19FD /* MockAIPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAIPlayer.swift; sourceTree = "<group>"; };
 		B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimaxPlayer.swift; sourceTree = "<group>"; };
+		B5C871011A0AB40500C30890 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,7 @@
 				B523857F1A02E41900852CC7 /* MoveReceiver.swift */,
 				B542F1321A07F63E00B755B9 /* ThreeByThreeBoardView.xib */,
 				B595D5421A0880F4005258AF /* BoardView.swift */,
+				B5C871011A0AB40500C30890 /* Config.swift */,
 			);
 			path = TicTacToeSwift;
 			sourceTree = "<group>";
@@ -360,6 +364,7 @@
 				B52C6D7919EC7FDB00F8D7E2 /* AppDelegate.swift in Sources */,
 				B559559B19EDBC6600275421 /* Board.swift in Sources */,
 				B5A71CFC1A018389008A19FD /* Player.swift in Sources */,
+				B5C871021A0AB40500C30890 /* Config.swift in Sources */,
 				B52385801A02E41900852CC7 /* MoveReceiver.swift in Sources */,
 				B55955A019EDC9E400275421 /* Game.swift in Sources */,
 				B547359719F052D500B4DC6F /* UIPort.swift in Sources */,
@@ -391,6 +396,7 @@
 				B559559E19EDBC7800275421 /* BoardSpec.swift in Sources */,
 				B52C6DAB19EC802E00F8D7E2 /* SwiftestController.swift in Sources */,
 				B52385811A02E41900852CC7 /* MoveReceiver.swift in Sources */,
+				B5C871031A0AB40500C30890 /* Config.swift in Sources */,
 				B5A71CFD1A018389008A19FD /* Player.swift in Sources */,
 				B559559C19EDBC6600275421 /* Board.swift in Sources */,
 				B5A71D051A0189E7008A19FD /* GameProtocol.swift in Sources */,
