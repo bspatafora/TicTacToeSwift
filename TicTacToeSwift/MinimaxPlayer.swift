@@ -3,7 +3,7 @@ import Foundation
 class MinimaxPlayer: Player {
     var receiver: MoveReceiver?
 
-    override func move(#spaces: [String], receiver: MoveReceiver) {
+    override func move(#spaces: [Token], receiver: MoveReceiver) {
         self.receiver = receiver
         responseData(buildRequest(spaces))
     }
@@ -24,16 +24,17 @@ class MinimaxPlayer: Player {
         }
     }
 
-    private func buildRequest(spaces: [String]) -> NSMutableURLRequest {
+    private func buildRequest(spaces: [Token]) -> NSMutableURLRequest {
         let request = NSMutableURLRequest(URL: NSURL(string: Config.minimaxURL())!)
         request.HTTPMethod = "POST"
         request.HTTPBody = serialize(spaces)
         return request
     }
 
-    private func serialize(spaces: [String]) -> NSData {
+    private func serialize(spaces: [Token]) -> NSData {
+        let stringSpaces = spaces.map { $0.rawValue }
         var error: NSError?
-        return NSJSONSerialization.dataWithJSONObject(spaces, options: nil, error: &error)!
+        return NSJSONSerialization.dataWithJSONObject(stringSpaces, options: nil, error: &error)!
     }
 
     private func parseMove(responseData: NSData) -> Int {

@@ -33,7 +33,7 @@ class MockGame: GameProtocol {
         receivedMove = true
     }
 
-    func spaces() -> [String] {
+    func spaces() -> [Token] {
         return []
     }
 
@@ -49,7 +49,7 @@ class MockGame: GameProtocol {
         return wasDrawFlag
     }
 
-    func winningToken() -> String? {
-        return ""
+    func winningToken() -> Token? {
+        return Token.Empty
     }
 }

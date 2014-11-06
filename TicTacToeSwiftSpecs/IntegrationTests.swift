@@ -5,8 +5,8 @@ class IntegrationTests: SwiftestSuite {
     let spec = describe("IntegrationTests") {
         it("ends with a winner in a game between two users") {
             let game = Game(board: Board(),
-                            firstPlayer: Player(token: "X", type: PlayerType.Human),
-                            secondPlayer: Player(token: "O", type: PlayerType.Human))
+                            firstPlayer: Player(token: .X, type: PlayerType.Human),
+                            secondPlayer: Player(token: .O, type: PlayerType.Human))
             let adapter = MockUIAdapter()
             let port = UIPort(game: game, adapter: adapter)
             
@@ -20,8 +20,8 @@ class IntegrationTests: SwiftestSuite {
         
         it("ends with a draw in a game between two users") {
             let game = Game(board: Board(),
-                            firstPlayer: Player(token: "X", type: PlayerType.Human),
-                            secondPlayer: Player(token: "O", type: PlayerType.Human))
+                            firstPlayer: Player(token: .X, type: PlayerType.Human),
+                            secondPlayer: Player(token: .O, type: PlayerType.Human))
             let adapter = MockUIAdapter()
             let port = UIPort(game: game, adapter: adapter)
             
@@ -39,8 +39,8 @@ class IntegrationTests: SwiftestSuite {
 
         it("ends with the AI winning in a game between two a user and an AI") {
             let game = Game(board: Board(),
-                            firstPlayer: Player(token: "X", type: PlayerType.Human),
-                            secondPlayer: MockAIPlayer(token: "O", type: PlayerType.AI))
+                            firstPlayer: Player(token: .X, type: PlayerType.Human),
+                            secondPlayer: MockAIPlayer(token: .O, type: PlayerType.AI))
             let adapter = MockUIAdapter()
             let port = UIPort(game: game, adapter: adapter)
             

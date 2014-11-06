@@ -1,13 +1,13 @@
 import Foundation
 
 protocol UIAdapterProtocol {
-    func boardWasUpdated(#spaces: [String])
+    func boardWasUpdated(#spaces: [Token])
 
-    func aiIsThinking(#spaces: [String])
+    func aiIsThinking(#spaces: [Token])
 
-    func gameEndedInDraw(#spaces: [String])
+    func gameEndedInDraw(#spaces: [Token])
 
-    func gameEndedInWinner(#spaces: [String], token: String)
+    func gameEndedInWinner(#spaces: [Token], token: Token)
 
     func serviceIsUnavailable()
 }

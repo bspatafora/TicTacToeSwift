@@ -35,21 +35,21 @@ class VictoryConditionsSpec: SwiftestSuite {
             let board = TestBoard().generate(["X", "X", "X",
                                               " ", " ", " ",
                                               " ", " ", " "])
-            expect(VictoryConditions().winningToken(board: board)).to(.Equal("X"))
+            expect(VictoryConditions().winningToken(board: board)).to(.Equal(.X))
         }
 
         it("returns the token with a column win") {
             let board = TestBoard().generate(["X", "O", "X",
                                               " ", "O", " ",
                                               " ", "O", " "])
-            expect(VictoryConditions().winningToken(board: board)).to(.Equal("O"))
+            expect(VictoryConditions().winningToken(board: board)).to(.Equal(.O))
         }
 
         it("returns the token with a diagonal win") {
             let board = TestBoard().generate(["X", "O", " ",
                                               " ", "X", " ",
                                               " ", "O", "X"])
-            expect(VictoryConditions().winningToken(board: board)).to(.Equal("X"))
+            expect(VictoryConditions().winningToken(board: board)).to(.Equal(.X))
         }
     }
 }

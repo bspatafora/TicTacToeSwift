@@ -24,7 +24,7 @@ class Game: GameProtocol {
         switchPlayers()
     }
 
-    func spaces() -> [String] {
+    func spaces() -> [Token] {
         return board.getSpaces()
     }
 
@@ -40,7 +40,7 @@ class Game: GameProtocol {
         return VictoryConditions().isDraw(board: board)
     }
     
-    func winningToken() -> String? {
+    func winningToken() -> Token? {
         return VictoryConditions().winningToken(board: board)
     }
     
