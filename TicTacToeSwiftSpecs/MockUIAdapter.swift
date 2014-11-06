@@ -14,17 +14,17 @@ class MockUIAdapter: UIAdapterProtocol {
         return -1
     }
     
-    func boardWasUpdated(#spaces: [String]) {
+    func boardWasUpdated(#spaces: [Token]) {
         receivedBoardWasUpdated = true
     }
 
-    func aiIsThinking(#spaces: [String]) { }
+    func aiIsThinking(#spaces: [Token]) { }
     
-    func gameEndedInDraw(#spaces: [String]) {
+    func gameEndedInDraw(#spaces: [Token]) {
         receivedGameEndedInDraw = true
     }
     
-    func gameEndedInWinner(#spaces: [String], token: String) {
+    func gameEndedInWinner(#spaces: [Token], token: Token) {
         receivedGameEndedInWinner = true
     }
 

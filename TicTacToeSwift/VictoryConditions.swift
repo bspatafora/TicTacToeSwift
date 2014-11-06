@@ -8,7 +8,7 @@ class VictoryConditions {
         return false
     }
 
-    func winningToken(#board: Board) -> String? {
+    func winningToken(#board: Board) -> Token? {
         for line in board.fullLines()! {
             if filledWithSameToken(line) {
                 return line[0]
@@ -25,7 +25,7 @@ class VictoryConditions {
         return winningToken(board: board) != nil
     }
 
-    private func filledWithSameToken(line: [String]) -> Bool {
+    private func filledWithSameToken(line: [Token]) -> Bool {
         let firstToken = line[0]
         for space in line {
             if space != firstToken {

@@ -6,15 +6,15 @@ enum PlayerType {
 }
 
 class Player {
-    let token: String
+    let token: Token
     let type: PlayerType
     
-    init(token: String, type: PlayerType) {
+    init(token: Token, type: PlayerType) {
         self.token = token
         self.type = type
     }
 
-    func move(#spaces: [String], receiver: MoveReceiver) { }
+    func move(#spaces: [Token], receiver: MoveReceiver) { }
 }
 
 func ==(rhs: Player, lhs: Player) -> Bool {

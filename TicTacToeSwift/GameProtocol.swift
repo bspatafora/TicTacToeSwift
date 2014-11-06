@@ -7,7 +7,7 @@ protocol GameProtocol {
     
     func move(space: Int)
     
-    func spaces() -> [String]
+    func spaces() -> [Token]
 
     func isSpaceOpen(spaces: Int) -> Bool
     
@@ -15,5 +15,5 @@ protocol GameProtocol {
     
     func wasDraw() -> Bool
     
-    func winningToken() -> String?
+    func winningToken() -> Token?
 }

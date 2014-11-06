@@ -27,14 +27,14 @@ class ViewController: UIViewController, UIAdapterProtocol {
         port.makeMove(move: sender.tag)
     }
 
-    func boardWasUpdated(#spaces: [String]) {
+    func boardWasUpdated(#spaces: [Token]) {
         updateButtons(spaces)
         enableButtons(spaces)
         enableNewGameButton()
         setStatusText("")
     }
 
-    func aiIsThinking(#spaces: [String]) {
+    func aiIsThinking(#spaces: [Token]) {
         updateButtons(spaces)
         setStatusText("Thinking")
     }
@@ -45,12 +45,12 @@ class ViewController: UIViewController, UIAdapterProtocol {
         enableNewGameButton()
     }
 
-    func gameEndedInDraw(#spaces: [String]) {
+    func gameEndedInDraw(#spaces: [Token]) {
         endGame(spaces, outcome: "Draw")
     }
 
-    func gameEndedInWinner(#spaces: [String], token: String) {
-        endGame(spaces, outcome: "\(token) wins!")
+    func gameEndedInWinner(#spaces: [Token], token: Token) {
+        endGame(spaces, outcome: "\(token.rawValue) wins!")
     }
 
     private func confirmNewGame() {
@@ -70,11 +70,11 @@ class ViewController: UIViewController, UIAdapterProtocol {
     }
 
     private func newGame() {
-        game = Game(board: Board(), firstPlayer: Player(token: "X", type: PlayerType.Human), secondPlayer: MinimaxPlayer(token: "O", type: PlayerType.AI))
+        game = Game(board: Board(), firstPlayer: Player(token: .X, type: PlayerType.Human), secondPlayer: MinimaxPlayer(token: .O, type: PlayerType.AI))
         port = UIPort(game: game, adapter: self)
     }
 
-    private func endGame(spaces: [String], outcome: String) {
+    private func endGame(spaces: [Token], outcome: String) {
         disableButtons()
         updateButtons(spaces)
         setStatusText(outcome)
@@ -87,7 +87,7 @@ class ViewController: UIViewController, UIAdapterProtocol {
         }
     }
 
-    private func enableButtons(spaces: [String]) {
+    private func enableButtons(spaces: [Token]) {
         for (index, button) in enumerate(boardButtons) {
             if game.isSpaceOpen(index) {
                 button.enabled = true
@@ -95,16 +95,31 @@ class ViewController: UIViewController, UIAdapterProtocol {
         }
     }
 
-    private func updateButtons(spaces: [String]) {
+    private func updateButtons(spaces: [Token]) {
         for (index, button) in enumerate(boardButtons) {
-            button.setTitle(spaces[index], forState: UIControlState.Normal)
+            switch spaces[index] {
+            case .X:
+                setButtonImage(button, imageName: "X.png")
+            case .O:
+                setButtonImage(button, imageName: "O.png")
+            default:
+                setButtonImage(button, imageName: nil)
+            }
         }
+    }
+
+    private func setButtonImage(button: UIButton, imageName: String?) {
+        var image: UIImage?
+        if imageName != nil {
+            image = UIImage(named: imageName!)
+        }
+        button.setBackgroundImage(image, forState: .Normal)
     }
 
     private func resetButtons() {
         for button in boardButtons {
             button.enabled = true
-            button.setTitle(nil, forState: UIControlState.Normal)
+            button.setBackgroundImage(nil, forState: .Normal)
         }
     }
 

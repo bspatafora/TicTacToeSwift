@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B515548A1A0BE43C00D28141 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51554891A0BE43C00D28141 /* Tokens.swift */; };
+		B515548B1A0BE43C00D28141 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51554891A0BE43C00D28141 /* Tokens.swift */; };
 		B52385801A02E41900852CC7 /* MoveReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B523857F1A02E41900852CC7 /* MoveReceiver.swift */; };
 		B52385811A02E41900852CC7 /* MoveReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B523857F1A02E41900852CC7 /* MoveReceiver.swift */; };
 		B52385841A04111B00852CC7 /* MockMoveReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52385831A04111B00852CC7 /* MockMoveReceiver.swift */; };
@@ -76,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B51554891A0BE43C00D28141 /* Tokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		B523857F1A02E41900852CC7 /* MoveReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveReceiver.swift; sourceTree = "<group>"; };
 		B52385831A04111B00852CC7 /* MockMoveReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMoveReceiver.swift; sourceTree = "<group>"; };
 		B52C6D7319EC7FDB00F8D7E2 /* TicTacToeSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +176,7 @@
 				B542F1321A07F63E00B755B9 /* ThreeByThreeBoardView.xib */,
 				B595D5421A0880F4005258AF /* BoardView.swift */,
 				B5C871011A0AB40500C30890 /* Config.swift */,
+				B51554891A0BE43C00D28141 /* Tokens.swift */,
 			);
 			path = TicTacToeSwift;
 			sourceTree = "<group>";
@@ -371,6 +375,7 @@
 				B595D5431A0880F4005258AF /* BoardView.swift in Sources */,
 				B55955A519EDD46B00275421 /* VictoryConditions.swift in Sources */,
 				B5A71D041A0189E7008A19FD /* GameProtocol.swift in Sources */,
+				B515548A1A0BE43C00D28141 /* Tokens.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +394,7 @@
 				B547359C19F052E800B4DC6F /* UIPortSpec.swift in Sources */,
 				B55955A119EDC9E400275421 /* Game.swift in Sources */,
 				B5A71D021A0188CD008A19FD /* MockGame.swift in Sources */,
+				B515548B1A0BE43C00D28141 /* Tokens.swift in Sources */,
 				B5A71D0A1A01A209008A19FD /* MinimaxPlayer.swift in Sources */,
 				B55955A819EDD47D00275421 /* VictoryConditionsSpec.swift in Sources */,
 				B55955A619EDD46B00275421 /* VictoryConditions.swift in Sources */,
