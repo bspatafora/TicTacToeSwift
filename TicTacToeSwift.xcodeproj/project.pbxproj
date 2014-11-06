@@ -158,25 +158,11 @@
 		B52C6D7519EC7FDB00F8D7E2 /* TicTacToeSwift */ = {
 			isa = PBXGroup;
 			children = (
-				B52C6D7819EC7FDB00F8D7E2 /* AppDelegate.swift */,
-				B52C6D7A19EC7FDB00F8D7E2 /* ViewController.swift */,
-				B52C6D7C19EC7FDB00F8D7E2 /* Main.storyboard */,
+				B5A3D1571A0C2D9900764AC3 /* AI */,
+				B5A3D1521A0C2C3E00764AC3 /* Core */,
+				B5A3D1551A0C2CCE00764AC3 /* UI */,
 				B52C6D7F19EC7FDB00F8D7E2 /* Images.xcassets */,
-				B52C6D8119EC7FDB00F8D7E2 /* LaunchScreen.xib */,
 				B52C6D7619EC7FDB00F8D7E2 /* Supporting Files */,
-				B559559A19EDBC6600275421 /* Board.swift */,
-				B559559F19EDC9E400275421 /* Game.swift */,
-				B5A71D031A0189E7008A19FD /* GameProtocol.swift */,
-				B55955A419EDD46B00275421 /* VictoryConditions.swift */,
-				B547359619F052D500B4DC6F /* UIPort.swift */,
-				B547359D19F0555400B4DC6F /* UIAdapterProtocol.swift */,
-				B5A71CFB1A018389008A19FD /* Player.swift */,
-				B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */,
-				B523857F1A02E41900852CC7 /* MoveReceiver.swift */,
-				B542F1321A07F63E00B755B9 /* ThreeByThreeBoardView.xib */,
-				B595D5421A0880F4005258AF /* BoardView.swift */,
-				B5C871011A0AB40500C30890 /* Config.swift */,
-				B51554891A0BE43C00D28141 /* Tokens.swift */,
 			);
 			path = TicTacToeSwift;
 			sourceTree = "<group>";
@@ -184,6 +170,7 @@
 		B52C6D7619EC7FDB00F8D7E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B5C871011A0AB40500C30890 /* Config.swift */,
 				B52C6D7719EC7FDB00F8D7E2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -201,20 +188,12 @@
 		B52C6DA619EC802E00F8D7E2 /* TicTacToeSwiftSpecs */ = {
 			isa = PBXGroup;
 			children = (
+				B5A3D1581A0C2DAB00764AC3 /* AI */,
+				B5A3D1541A0C2C5F00764AC3 /* Core */,
+				B5A3D1561A0C2CF000764AC3 /* UI */,
 				B52C6DB119EC802E00F8D7E2 /* Images.xcassets */,
 				B52C6DA919EC802E00F8D7E2 /* Support */,
 				B52C6DA719EC802E00F8D7E2 /* Supporting Files */,
-				B559559D19EDBC7800275421 /* BoardSpec.swift */,
-				B55955A219EDC9F400275421 /* GameSpec.swift */,
-				B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */,
-				B55955A919EDF64B00275421 /* TestBoard.swift */,
-				B547359B19F052E800B4DC6F /* UIPortSpec.swift */,
-				B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */,
-				B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */,
-				B5A71CFF1A01848F008A19FD /* PlayerSpec.swift */,
-				B5A71D011A0188CD008A19FD /* MockGame.swift */,
-				B5A71D061A01917E008A19FD /* MockAIPlayer.swift */,
-				B52385831A04111B00852CC7 /* MockMoveReceiver.swift */,
 			);
 			path = TicTacToeSwiftSpecs;
 			sourceTree = "<group>";
@@ -235,6 +214,75 @@
 				B52C6DAE19EC802E00F8D7E2 /* Main.storyboard */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		B5A3D1521A0C2C3E00764AC3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B559559A19EDBC6600275421 /* Board.swift */,
+				B559559F19EDC9E400275421 /* Game.swift */,
+				B5A71D031A0189E7008A19FD /* GameProtocol.swift */,
+				B5A71CFB1A018389008A19FD /* Player.swift */,
+				B51554891A0BE43C00D28141 /* Tokens.swift */,
+				B55955A419EDD46B00275421 /* VictoryConditions.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B5A3D1541A0C2C5F00764AC3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B559559D19EDBC7800275421 /* BoardSpec.swift */,
+				B55955A219EDC9F400275421 /* GameSpec.swift */,
+				B5A71CF01A016E2E008A19FD /* IntegrationTests.swift */,
+				B5A71D011A0188CD008A19FD /* MockGame.swift */,
+				B5A71CFF1A01848F008A19FD /* PlayerSpec.swift */,
+				B55955A919EDF64B00275421 /* TestBoard.swift */,
+				B55955A719EDD47D00275421 /* VictoryConditionsSpec.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		B5A3D1551A0C2CCE00764AC3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B52C6D7819EC7FDB00F8D7E2 /* AppDelegate.swift */,
+				B595D5421A0880F4005258AF /* BoardView.swift */,
+				B52C6D8119EC7FDB00F8D7E2 /* LaunchScreen.xib */,
+				B52C6D7C19EC7FDB00F8D7E2 /* Main.storyboard */,
+				B523857F1A02E41900852CC7 /* MoveReceiver.swift */,
+				B542F1321A07F63E00B755B9 /* ThreeByThreeBoardView.xib */,
+				B547359D19F0555400B4DC6F /* UIAdapterProtocol.swift */,
+				B547359619F052D500B4DC6F /* UIPort.swift */,
+				B52C6D7A19EC7FDB00F8D7E2 /* ViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		B5A3D1561A0C2CF000764AC3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B52385831A04111B00852CC7 /* MockMoveReceiver.swift */,
+				B5A71CF21A016FAB008A19FD /* MockUIAdapter.swift */,
+				B547359B19F052E800B4DC6F /* UIPortSpec.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		B5A3D1571A0C2D9900764AC3 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				B5A71D081A01A209008A19FD /* MinimaxPlayer.swift */,
+			);
+			name = AI;
+			sourceTree = "<group>";
+		};
+		B5A3D1581A0C2DAB00764AC3 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				B5A71D061A01917E008A19FD /* MockAIPlayer.swift */,
+			);
+			name = AI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
