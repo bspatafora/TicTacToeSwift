@@ -28,47 +28,33 @@ class BoardSpec: SwiftestSuite {
                                                  Token.Empty, Token.Empty, Token.Empty]))
         }
 
-        it("provides its full row lines") {
-            let board = TestBoard().generate(["X", "O", "X",
+        it("provides its rows") {
+            let board = TestBoard().generate(["X", " ", "X",
                                               " ", " ", " ",
-                                              "O", "X", "O"])
-            let fullLines = board.fullLines()!
-            let firstRowLine = fullLines[0]
-            let secondRowLine = fullLines[1]
+                                              "O", "X", " "])
 
-            expect(fullLines.count).to(.Equal(2))
-            expect(firstRowLine).to(.Equal([Token.X, Token.O, Token.X]))
-            expect(secondRowLine).to(.Equal([Token.O, Token.X, Token.O]))
+            expect(board.rows()[0]).to(.Equal([Token.X, Token.Empty, Token.X]))
+            expect(board.rows()[1]).to(.Equal([Token.Empty, Token.Empty, Token.Empty]))
+            expect(board.rows()[2]).to(.Equal([Token.O, Token.X, Token.Empty]))
         }
 
-        it("provides its full column lines") {
+        it("provides its columns") {
             let board = TestBoard().generate(["O", " ", "X",
                                               "X", " ", "O",
-                                              "O", " ", "X"])
-            let fullLines = board.fullLines()!
-            let firstRowLine = fullLines[0]
-            let secondRowLine = fullLines[1]
-            
-            expect(fullLines.count).to(.Equal(2))
-            expect(firstRowLine).to(.Equal([Token.O, Token.X, Token.O]))
-            expect(secondRowLine).to(.Equal([Token.X, Token.O, Token.X]))
+                                              "O", " ", " "])
+
+            expect(board.columns()[0]).to(.Equal([Token.O, Token.X, Token.O]))
+            expect(board.columns()[1]).to(.Equal([Token.Empty, Token.Empty, Token.Empty]))
+            expect(board.columns()[2]).to(.Equal([Token.X, Token.O, Token.Empty]))
         }
 
-        it("provides its full diagonal lines") {
+        it("provides its diagonals") {
             let board = TestBoard().generate([" ", " ", "X",
                                               " ", "X", " ",
                                               "X", " ", " "])
-            let fullLines = board.fullLines()!
 
-            expect(fullLines.count).to(.Equal(1))
-            expect(fullLines[0]).to(.Equal([Token.X, Token.X, Token.X]))
-        }
-
-        it("returns an empty array when it has no full lines") {
-            let board = TestBoard().generate([" ", "O", " ",
-                                              " ", " ", "X",
-                                              "X", " ", " "])
-            expect(board.fullLines()!.count).to(.Equal(0))
+            expect(board.diagonals()[0]).to(.Equal([Token.Empty, Token.X, Token.Empty]))
+            expect(board.diagonals()[1]).to(.Equal([Token.X, Token.X, Token.X]))
         }
 
         it("returns false when it is not full") {
@@ -83,6 +69,14 @@ class BoardSpec: SwiftestSuite {
                                               "O", "O", "X",
                                               "X", "O", "X"])
             expect(board.isFull()).to(.Equal(true))
+        }
+
+        it("returns false when the line is not full") {
+            expect(Board().isFullLine([Token.Empty, Token.X, Token.O])).to(.Be(false))
+        }
+
+        it("returns true when the line is full") {
+            expect(Board().isFullLine([Token.O, Token.X, Token.O])).to(.Be(true))
         }
     }
 }

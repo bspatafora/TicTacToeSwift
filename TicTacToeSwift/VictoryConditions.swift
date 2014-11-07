@@ -2,14 +2,11 @@ import Foundation
 
 class VictoryConditions {
     func isGameOver(#board: Board) -> Bool {
-        if isWinner(board) || isDraw(board: board) {
-            return true
-        }
-        return false
+        return isWinner(board) || isDraw(board: board)
     }
 
     func winningToken(#board: Board) -> Token? {
-        for line in board.fullLines()! {
+        for line in fullLines(board)! {
             if filledWithSameToken(line) {
                 return line[0]
             }
@@ -18,7 +15,7 @@ class VictoryConditions {
     }
 
     func isDraw(#board: Board) -> Bool {
-        return board.isFull()
+        return !isWinner(board) && board.isFull()
     }
 
     private func isWinner(board: Board) -> Bool {
@@ -33,5 +30,10 @@ class VictoryConditions {
             }
         }
         return true
+    }
+
+    private func fullLines(board: Board) -> ([[Token]])? {
+        let lines = board.rows() + board.columns() + board.diagonals()
+        return lines.filter({ board.isFullLine($0) })
     }
 }

@@ -19,42 +19,33 @@ class Board {
         return spaces
     }
 
-    func fullLines() -> ([[Token]])? {
-        return lines().filter({ self.isFullLine($0) })
-    }
-
-    func isFull() -> Bool {
-        for space in spaces {
-            if space == Token.Empty {
-                return false
-            }
-        }
-        return true
-    }
-
-    private func lines() -> [[Token]] {
-        return rows() + columns() + diagonals()
-    }
-
-    private func rows() -> [[Token]] {
+    func rows() -> [[Token]] {
         return [[spaces[0], spaces[1], spaces[2]],
                 [spaces[3], spaces[4], spaces[5]],
                 [spaces[6], spaces[7], spaces[8]]]
     }
 
-    private func columns() -> [[Token]] {
+    func columns() -> [[Token]] {
         return [[spaces[0], spaces[3], spaces[6]],
                 [spaces[1], spaces[4], spaces[7]],
                 [spaces[2], spaces[5], spaces[8]]]
     }
 
-    private func diagonals() -> [[Token]] {
+    func diagonals() -> [[Token]] {
         return [[spaces[0], spaces[4], spaces[8]],
                 [spaces[2], spaces[4], spaces[6]]]
     }
 
-    private func isFullLine(line: [Token]) -> Bool {
-        for space in line {
+    func isFull() -> Bool {
+        return isFull(spaces)
+    }
+
+    func isFullLine(line: [Token]) -> Bool {
+        return isFull(line)
+    }
+
+    private func isFull(tokenArray: [Token]) -> Bool {
+        for space in tokenArray {
             if space == Token.Empty {
                 return false
             }
