@@ -4,6 +4,12 @@ The game Tic-tac-toe in Swift, for iOS.
 
 ## Requirements
   * Xcode 6
+  * iOS SDK 8.1
+  * OS X SDK 10.10
+  * [Swiftest][]
+
+## Setting up Swiftest
+  * Instructions can be found [here][]
 
 ## Running the game
   1. Open the project in Xcode
@@ -17,3 +23,6 @@ The game Tic-tac-toe in Swift, for iOS.
   1. Open the project in Xcode
   2. Select the `TicTacToeSwiftSpecs` target
   3. Hit Run
+
+[Swiftest]: https://github.com/Swiftest/Swiftest
+[here]: http://bspatafora.com/blog/setting-up-swiftest/
