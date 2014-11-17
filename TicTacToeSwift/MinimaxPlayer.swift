@@ -20,7 +20,7 @@ class MinimaxPlayer: Player {
         if let response = responseData {
             receiver.makeMove(move: parseMove(response))
         } else {
-            receiver.makeMove(move: nil)
+            receiver.serviceIsUnavailable()
         }
     }
 

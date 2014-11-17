@@ -49,7 +49,7 @@ class UIPortSpec: SwiftestSuite {
             let adapter = MockUIAdapter()
             let port = UIPort(game: game, adapter: adapter)
             
-            port.makeMove(move: nil)
+            port.serviceIsUnavailable()
             expect(adapter.receivedServiceIsUnavailable).to(.Be(true))
         }
     }
