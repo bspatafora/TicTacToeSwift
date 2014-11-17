@@ -9,33 +9,22 @@ class UIPort: MoveReceiver {
         self.adapter = adapter
     }
 
-    func makeMove(var #move: Int?) {
-        if let move = move {
-            game.move(move)
-            if game.isOver() {
-                endGame()
-            } else {
-                continueGame()
-            }
-        } else {
-            adapter.serviceIsUnavailable()
-        }
-    }
-
-    private func continueGame() {
-        if game.currentPlayerIsAI() {
-            adapter.aiIsThinking(spaces: game.spaces())
+    func makeMove(#move: Int) {
+        game.move(move)
+        let spaces = game.spaces()
+        if game.wasDraw() {
+            adapter.gameEndedInDraw(spaces: spaces)
+        } else if game.isOver() {
+            adapter.gameEndedInWinner(spaces: spaces, token: game.winningToken()!)
+        } else if game.currentPlayerIsAI() {
+            adapter.aiIsThinking(spaces: spaces)
             game.currentPlayerMove(receiver: self)
         } else {
-            adapter.boardWasUpdated(spaces: game.spaces())
+            adapter.boardWasUpdated(spaces: spaces)
         }
     }
 
-    private func endGame() {
-        if game.wasDraw() {
-            adapter.gameEndedInDraw(spaces: game.spaces())
-        } else {
-            adapter.gameEndedInWinner(spaces: game.spaces(), token: game.winningToken()!)
-        }
+    func serviceIsUnavailable() {
+        adapter.serviceIsUnavailable()
     }
 }
